@@ -1,4 +1,4 @@
-# practice-css
+# blogr-nextjs-prisma
 
 This is a lightweight starterkit / boilerplate.
 
