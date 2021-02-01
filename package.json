@@ -46,7 +46,7 @@
     "react-ga": "3.3.0",
     "styled-components": "5.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "twin.macro": "2.1.0",
+    "twin.macro": "2.2.0",
     "video.js": "7.10.2",
     "videojs-youtube": "2.6.1"
   },
