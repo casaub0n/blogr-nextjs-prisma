@@ -2,3 +2,5 @@ node_modules
 .next
 storybook-static
 yarn-error.log
+pgdata
+.env
