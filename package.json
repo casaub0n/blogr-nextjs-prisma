@@ -54,7 +54,7 @@
   "devDependencies": {
     "@babel/core": "7.12.10",
     "@fullhuman/postcss-purgecss": "4.0.0",
-    "@prisma/cli": "^2.15.0",
+    "@prisma/cli": "2.16.0",
     "@storybook/addon-actions": "6.1.15",
     "@storybook/addon-essentials": "6.1.15",
     "@storybook/addon-info": "5.3.21",
