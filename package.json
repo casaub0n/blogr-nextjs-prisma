@@ -35,7 +35,7 @@
     "npm": "⚠️ please use yarn instead 🙇"
   },
   "dependencies": {
-    "@emotion/react": "11.1.4",
+    "@emotion/react": "11.1.5",
     "@material-ui/core": "4.11.3",
     "@zeit/next-css": "1.0.1",
     "autoprefixer": "9.8.6",
