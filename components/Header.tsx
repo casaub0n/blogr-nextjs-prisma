@@ -1,36 +1,58 @@
 import styled from 'styled-components'
 import * as React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 type Props = {
-  location: string
+  isActive: boolean
 }
 
 const Component: React.FC<Props> = props => (
-  <header className="site-header">
-    <div className="site-header-wrapper">
-      <Link href={props.location}><a className="brand">{props.children}</a></Link>
-      <div className="search" />
-      <nav className="nav" />
-      <Link href="#"><a className="button">Track</a></Link>
+  <nav>
+    <div className="left">
+      <Link href="/">
+        <a className="bold" data-active={props.isActive}>
+          Feed
+        </a>
+      </Link>
     </div>
-  </header>
+  </nav>
 )
 
 const StyledComponent = styled(Component)`
-  &.site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .bold {
+    font-weight: bold;
   }
-  &.site-header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
   }
-  &.search {
-    fles: 1;
+
+  .left a[data-active="true"] {
+    color: gray;
+  }
+
+  a + a {
+    margin-left: 1rem;
+  }
+
+  nav {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
   }
 `
 
-export default StyledComponent
+const Container: React.FC<Props> = (props) => {
+  const router = useRouter()
+  const isActive: (pathname: string) => boolean = (pathname) =>
+  router.pathname === pathname
+
+  return (
+    <StyledComponent {...props} data-active={isActive("/")} />
+  )
+}
+
+export default Container
