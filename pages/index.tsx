@@ -1,15 +1,68 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
-import { NextPage } from 'next'
-import Header from '../components/Header'
+import { GetStaticProps } from 'next'
+import prisma from '../lib/prisma'
+import Post, { PostProps } from '../components/Post'
+import styled from 'styled-components'
 
-const IndexPage: NextPage = () => {
-  return (
-    <Layout title="Home | Next.js + TypeScript Example">
-      <Header location="/about">About</Header>
-      <h1>Hello Next.js 👋</h1>
+export const getStaticProps: GetStaticProps = async () => {
+  const feed = await prisma.post.findMany({
+    where: { published: true },
+    include: {
+      author: {
+        select: { name: true },
+      },
+    },
+  })
+  return { props: { feed } }
+}
+
+type Props = {
+  feed: PostProps[]
+}
+
+const Component: React.FC<Props> = props =>
+  (
+    <Layout>
+      <div className="page">
+        <h1>Public Feed</h1>
+        <main>
+          {props.feed.map((post) => (
+            <div key={post.id} className="post">
+              {/* TODO */}
+              <Post id={post.id} title={post.title} author={post.author} content={post.content} published={post.published} />
+            </div>
+          ))}
+        </main>
+      </div>
     </Layout>
+  )
+
+const StyledComponent = styled(Component)`
+  h1 {
+    color: red;
+  }
+
+  .post {
+    background: white;
+    transition: box-shadow 0.1s ease-in;
+  }
+
+  .post:hover {
+    box-shadow: 1px 1px 3px #aaa;
+  }
+
+  .post + .post {
+    margin-top: 2rem;
+  }
+`
+
+const Container: React.FC<Props> = props => {
+  return (
+    <StyledComponent
+      {...props}
+    />
   )
 }
 
-export default IndexPage
+export default Container
