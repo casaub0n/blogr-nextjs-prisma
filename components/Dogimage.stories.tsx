@@ -1,5 +1,5 @@
 import React from 'react'
-import { DogImage } from '../components/DogImage'
+import DogImage from '../components/DogImage'
 
 export default { title: 'Dog Image' }
 
