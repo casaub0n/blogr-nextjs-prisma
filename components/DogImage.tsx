@@ -20,6 +20,7 @@ const Component: React.VFC<IProps> = props => {
             </div>
         </div>
       </div>
+    </div>
   )
 }
 
