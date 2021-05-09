@@ -6,7 +6,7 @@ type MeProps = {
   className: string
 }
 
-const MeBasic: React.FC<MeProps> = props =>
+const MeBasic: React.VFC<MeProps> = props =>
     <>
       <h2 className={props.className}>I'm Takashi Yoshida</h2>
       <p>Web</p>
