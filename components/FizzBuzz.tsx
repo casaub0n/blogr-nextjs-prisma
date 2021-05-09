@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
-export const Component: React.FC = () => {
+export const Component: React.VFC = () => {
   const [num, setNum] = useState('')
 
   const convertFizzBuzz = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,4 +36,10 @@ export const Component: React.FC = () => {
 
 const StyledComponent = styled(Component)``
 
-export default StyledComponent
+const Container: React.VFC = () => {
+  return (
+    <StyledComponent />
+  )
+}
+
+export default Container
