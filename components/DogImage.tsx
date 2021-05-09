@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 type Props = {
   src: string
+  className?: string
 }
 
 const Component: React.FC<Props> = (prpps) => {
