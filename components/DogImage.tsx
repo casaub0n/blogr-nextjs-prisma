@@ -24,6 +24,12 @@ const Component: React.VFC<IProps> = props => {
   )
 }
 
-const StyledComponent = styled(Component)``
+export const StyledComponent = styled(Component)``
 
-export default StyledComponent
+const Container: React.VFC<IProps> = props => {
+  return (
+    <StyledComponent {...props} />
+  )
+}
+
+export default Container
