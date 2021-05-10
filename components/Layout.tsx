@@ -36,27 +36,27 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Component: React.FC = props => (
-  <div>
-    <Header isActive={true} />
-    <div className="layout">{props.children}</div>
+type IProps = {
+  children?: React.ReactNode
+  className?: string
+}
+
+const Component: React.VFC<IProps> = ({ children, className }) => (
+  <div className={className}>
+    <Header />
+    <div className="layout">{children}</div>
     <GlobalStyle />
   </div>
 )
 
-const StyledComponent = styled(Component)`
+export const StyledComponent = styled(Component)`
   .layout {
     padding: 0.2rem;
   }
 `
 
-const Container: React.FC = props => {
-  return (
-    <StyledComponent
-      {...props}
-      children={props.children}
-    />
-  )
+const Container: React.VFC<IProps> = ({ children }) => {
+  return <StyledComponent children={children} />
 }
 
 export default Container

@@ -3,7 +3,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import Layout from '../../components/Layout'
-import { PostProps } from '../../components/Post'
+import { ContainerProps as PostProps } from '../../components/Post'
 import prisma from '../../lib/prisma'
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
@@ -25,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
 type Props = {flag: boolean} & PostProps
 
-const Component: React.FC<Props> = props => (
+const Component: React.VFC<Props> = props => (
     <Layout>
       <div>
         <h2>{props.flag ? `${props.title} (Draft)` : props.title}</h2>
@@ -58,9 +58,7 @@ const StyledComponent = styled(Component)`
   }
 `
 
-type ContainerProps = PostProps
-
-const Container: React.FC<ContainerProps> = props => {
+const Container: React.VFC<PostProps> = props => {
   const flag = !props.published
   return (
     <StyledComponent

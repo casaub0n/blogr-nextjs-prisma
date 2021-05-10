@@ -2,7 +2,7 @@ import * as React from 'react'
 import Layout from '../components/Layout'
 import { GetStaticProps } from 'next'
 import prisma from '../lib/prisma'
-import Post, { PostProps } from '../components/Post'
+import Post, { ContainerProps as PostProps } from '../components/Post'
 import styled from 'styled-components'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -21,7 +21,7 @@ type Props = {
   feed: PostProps[]
 }
 
-const Component: React.FC<Props> = props =>
+const Component: React.VFC<Props> = props =>
   (
     <Layout>
       <div className="page">
@@ -57,7 +57,7 @@ const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.FC<Props> = props => {
+const Container: React.VFC<Props> = props => {
   return (
     <StyledComponent
       {...props}
