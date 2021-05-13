@@ -35,7 +35,7 @@
     "npm": "⚠️ please use yarn instead 🙇"
   },
   "dependencies": {
-    "@emotion/react": "11.1.5",
+    "@emotion/react": "11.4.0",
     "@material-ui/core": "4.11.4",
     "@prisma/client": "2.22.1",
     "@zeit/next-css": "1.0.1",
