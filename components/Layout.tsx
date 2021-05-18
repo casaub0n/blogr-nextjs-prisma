@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
-import Header from './Header'
+import { Header } from './header'
 
 /**
  * TODO: not good
