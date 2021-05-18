@@ -11,6 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Build the stack
+        run: docker-compose up -d
       - uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
