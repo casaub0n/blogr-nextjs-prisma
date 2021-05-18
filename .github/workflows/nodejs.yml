@@ -1,7 +1,9 @@
 name: CI
+# TODO: which branch do we need this action https://gist.github.com/cecilemuller/437d7340b9f095cf5635dc9780a05092
 on: [push]
 jobs:
   build:
+    timeout-minutes: 10
     name: Build check
     runs-on: ubuntu-latest
 
