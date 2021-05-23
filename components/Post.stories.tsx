@@ -5,7 +5,7 @@ export default { title: 'Post' }
 
 type Props = ComponentProps<typeof Component>
 
-export const meta: Props = {
+const meta: Props = {
   id: 1999,
   title: 'Example title',
   author: {
@@ -17,4 +17,4 @@ export const meta: Props = {
   className: 'storyPost'
 }
 
-export const Post = () => <Component {...meta} />
+export const Post: React.VFC = () => <Component {...meta} />
