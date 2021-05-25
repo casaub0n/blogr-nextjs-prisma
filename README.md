@@ -3,9 +3,11 @@
 This is a boilerplate.
 
 ## Stack
-- taildwind css
-- google analytics
+- Taildwind css
+- Google analytics
 - Typescript
-- jest
+- Prisma
+- Jest
+- storybook
 - eslint
 - prettier
