@@ -6,8 +6,8 @@ type Props = {
   className: string
   children: React.ReactNode
 }
+
 const Component = React.forwardRef<HTMLAnchorElement, Props>(({children, className}, ref) => {
-  // const isLink = (pathName: string) => Boolean(pathName)
   return (
     <a className={className} ref={ref}>
       {children}
@@ -22,7 +22,7 @@ export const StyledComponent = styled(Component)`
 const Container: React.VFC = () => {
   return (
     <Link href="/">
-      <StyledComponent className="hoge">
+      <StyledComponent className="bold">
         Feed
       </StyledComponent>
     </Link>

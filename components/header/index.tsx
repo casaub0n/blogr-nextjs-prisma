@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import { signOut, useSession } from 'next-auth/client'
 import Link from 'next/link'
+import Bold from './atoms/Bold'
 
 export type ContainerProps = {
   componentStatus: {
@@ -27,11 +28,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
     return (
       <nav className={className}>
         <div className="left">
-          <Link href="/">
-            <a className="bold" data-active={props.isActive}>
-              Feed
-            </a>
-          </Link>
+          <Bold />
         </div>
         <div className="right">
           <p>Validating session ...</p>
@@ -165,14 +162,31 @@ export const Container: React.VFC = () => {
   const router = useRouter()
   const [session, loading] = useSession()
 
+  if (session && session.user) {
+    const props: Props = {
+      componentStatus: {
+        loading: loading,
+        session: Boolean(session)
+      },
+      user: {
+        email: session.user.email,
+        name: session.user.name
+      },
+      isActive: (pathName) => router.pathname === pathName,
+      handleClick: () => signOut()
+    }
+
+    return <StyledComponent {...props } />
+  }
+
   const props: Props = {
     componentStatus: {
       loading: loading,
       session: Boolean(session)
     },
     user: {
-      email: session?.user.email,
-      name: session?.user.name
+      email: undefined,
+      name: undefined
     },
     isActive: (pathName) => router.pathname === pathName,
     handleClick: () => signOut()
