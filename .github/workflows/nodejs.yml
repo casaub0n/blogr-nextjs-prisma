@@ -18,6 +18,9 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
+      - env:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: UA-SOME_ANALYTICS_ID-1
+          DATABASE_URL: "postgresql://prisma:admin@localhost:54320/prisma?schema=public"
       - name: yarn install, test
         run: |
           yarn install
