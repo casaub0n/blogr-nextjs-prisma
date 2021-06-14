@@ -18,15 +18,15 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
-        env:
-          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: UA-SOME_ANALYTICS_ID-1
-          DATABASE_URL: postgresql://prisma:admin@localhost:54320/prisma?schema=public
       - name: yarn install, test
         run: |
           yarn install
           yarn prisma db push
           yarn build
           yarn test
+        env:
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: UA-SOME_ANALYTICS_ID-1
+          DATABASE_URL: postgresql://prisma:admin@localhost:54320/prisma?schema=public
         env:
           CI: true
       # https://github.com/vercel/next.js/blob/master/errors/no-cache.md
