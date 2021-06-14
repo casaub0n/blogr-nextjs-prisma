@@ -25,10 +25,9 @@ jobs:
           yarn build
           yarn test
         env:
+          CI: true
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: UA-SOME_ANALYTICS_ID-1
           DATABASE_URL: postgresql://prisma:admin@localhost:54320/prisma?schema=public
-        env:
-          CI: true
       # https://github.com/vercel/next.js/blob/master/errors/no-cache.md
       # https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml
       - name: cache
