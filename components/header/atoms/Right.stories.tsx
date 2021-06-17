@@ -1,9 +1,9 @@
 import React, { ComponentProps } from 'react'
 import { Meta, Story } from '@storybook/react'
-import { StyledComponent as Component } from './Bold'
+import { StyledComponent as Component } from './Right'
 
 export default {
-  title: 'Bold button',
+  title: 'Right component',
   component: Component,
 } as Meta
 
@@ -13,15 +13,5 @@ const Template: Story<Props> = args => <Component {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  href: "http://example.com/",
-  className: "bold",
-  children: "Feed"
-}
-
-export const DataActive = Template.bind({})
-DataActive.args = {
-  href: "http://example.com/",
-  className: "bold",
-  children: "Feed",
-  dataActive: "true"
+  className: "right",
 }

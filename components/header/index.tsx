@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 import { signOut, useSession } from 'next-auth/client'
 import Link from 'next/link'
 import Bold from './atoms/Bold'
+import Left from './atoms/Left'
+import Right from './atoms/Right'
 
 export type ContainerProps = {
   componentStatus: {
@@ -19,41 +21,43 @@ export type User = {
 
 export type Props = {
   className?: string
-  isActive: (pathName: string) => boolean
   handleClick: () => void
 } & ContainerProps & { user: User }
 
+// TODO: isActive
 const Component: React.VFC<Props> = ({ className, componentStatus, user, ...props }) => {
+  const router = useRouter()
+  const isActive = (pathname: string) => router.pathname === pathname
+
   if (componentStatus.loading) {
     return (
       <nav className={className}>
-        <div className="left">
-          <Bold />
-        </div>
-        <div className="right">
+        <Left>
+          <Bold ref="/" data-active={isActive('/')}>
+            Feed
+          </Bold>
+        </Left>
+        <Right>
           <p>Validating session ...</p>
-        </div>
+        </Right>
       </nav>
     )
   }
 
-  // TODO: signOut
   if (componentStatus.session) {
     return (
       <nav className={className}>
-        <div className="left">
-          <Link href="/">
-            <a className="bold" data-active={props.isActive}>
-              Feed
-            </a>
-          </Link>
+        <Left>
+          <Bold ref="/" data-active={isActive('/')}>
+            Feed
+          </Bold>
           <Link href="/draft">
-            <a data-active={props.isActive}>
+            <a data-active={isActive('/draft')}>
               My draft
             </a>
           </Link>
-        </div>
-        <div className="right">
+        </Left>
+        <Right>
           <p>
             {user.name} ({user.email})
           </p>
@@ -65,7 +69,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
           <button onClick={props.handleClick}>
             <a>Log out</a>
           </button>
-        </div>
+        </Right>
       </nav>
     )
   }
@@ -73,31 +77,27 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
   if (!componentStatus.session) {
     return (
       <nav className={className}>
-        <div className="left">
-          <Link href="/">
-            <a className="bold" data-active={props.isActive}>
-              Feed
-            </a>
-          </Link>
-        </div>
-        <div className="right">
+        <Left>
+          <Bold ref="/" data-active={isActive('/')}>
+            Feed
+          </Bold>
+        </Left>
+        <Right>
           <Link href="/api/auth/signin">
-            <a data-active={props.isActive}>Log in</a>
+            <a data-active={isActive('signup')}>Log in</a>
           </Link>
-        </div>
+        </Right>
       </nav>
     )
   }
 
   return (
     <nav className={className}>
-      <div className="left">
-        <Link href="/">
-          <a className="bold" data-active={props.isActive}>
-            Feed
-          </a>
-        </Link>
-      </div>
+      <Left>
+        <Bold ref="/" data-active={isActive('/')}>
+          Feed
+        </Bold>
+      </Left>
     </nav>
   )
 }
@@ -106,60 +106,9 @@ export const StyledComponent = styled(Component)`
   display: flex;
   padding: 2rem;
   align-items: center;
-
-  .right {
-    margin-left: auto;
-
-    a {
-      text-decoration: none;
-      color: #000;
-      display: inline-block;
-    }
-
-    p {
-      display: inline-block;
-      font-size: 13px;
-      padding-right: 1rem;
-    }
-
-    a + a {
-      margin-left: 1rem;
-    }
-  }
-
-  .right a {
-    border: 1px solid black;
-    padding: 0.5rem 1rem;
-    border-radius: 3px;
-  }
-
-  button {
-    border: none;
-  }
-
-  .left {
-    .bold {
-      font-weight: bold;
-    }
-
-    & a {
-      text-decoration: none;
-      color: #000;
-      display: inline-block;
-    }
-
-    a[data-active='true'] {
-      color: gray;
-    }
-
-    a + a {
-      margin-left: 1rem;
-    }
-  }
 `
 
 export const Container: React.VFC = () => {
-  const router = useRouter()
   const [session, loading] = useSession()
 
   if (session && session.user) {
@@ -172,11 +121,10 @@ export const Container: React.VFC = () => {
         email: session.user.email,
         name: session.user.name
       },
-      isActive: (pathName) => router.pathname === pathName,
       handleClick: () => signOut()
     }
 
-    return <StyledComponent {...props } />
+    return <StyledComponent className="header" {...props } />
   }
 
   const props: Props = {
@@ -188,11 +136,10 @@ export const Container: React.VFC = () => {
       email: undefined,
       name: undefined
     },
-    isActive: (pathName) => router.pathname === pathName,
     handleClick: () => signOut()
   }
 
-  return <StyledComponent {...props } />
+  return <StyledComponent className="header" {...props } />
 }
 
 export { Container as Header }
