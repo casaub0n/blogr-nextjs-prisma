@@ -56,7 +56,11 @@ export const StyledComponent = styled(Component)`
 `
 
 const Container: React.VFC<IProps> = ({ children }) => {
-  return <StyledComponent children={children} />
+  return (
+    <StyledComponent>
+      {children}
+    </StyledComponent>
+  )
 }
 
 export default Container

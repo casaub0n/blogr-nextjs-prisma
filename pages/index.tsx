@@ -17,13 +17,17 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { feed } }
 }
 
-type Props = {
+type ContainerProps = {
   feed: PostProps[]
 }
 
-const Component: React.VFC<Props> = props =>
+type Props = {
+  className: string
+} & ContainerProps
+
+const Component: React.VFC<Props> = ({className, ...props}) =>
   (
-    <Layout>
+    <Layout className={className}>
       <div className="page">
         <h1>Public Feed</h1>
         <main>
@@ -57,7 +61,7 @@ const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.VFC<Props> = props => {
+const Container: React.VFC<Props> = (props) => {
   return (
     <StyledComponent
       {...props}

@@ -3,6 +3,6 @@ import { Me, MeAvatar } from '../components/Me'
 
 export default { title: 'Test for styled-component' }
 
-export const withMe = () => <Me className="hoge" />
+export const withMe = <Me className="hoge" />
 
-export const withMeAvatar = () => <MeAvatar />
+export const withMeAvatar: React.VFC = () => <MeAvatar />

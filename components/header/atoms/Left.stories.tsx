@@ -4,7 +4,7 @@ import { StyledComponent as Component } from './Left'
 import { StyledComponent as Bold } from './Bold'
 
 export default {
-  title: 'Reft component',
+  title: 'Left component',
   component: Component,
 } as Meta
 
@@ -13,15 +13,19 @@ type Props = ComponentProps<typeof Component>
 const Template: Story<Props> = args => <Component {...args} />
 
 export const Default = Template.bind({})
-const bold = <Bold href="http://example.com/" className="bold" data-active="true">Feed</Bold>
 Default.args = {
   className: "left",
-  children: bold
+  children: (
+    <Bold to="http://example.com/" className="bold" data-active="true">Feed</Bold>
+  )
 }
-const session = <><Bold href="http://example.com/" className="bold" data-active="true">Feed</Bold><a data-active="true">My draft</a></>
 
-export const Session = Template.bind({})
-Session.args = {
+export const Login = Template.bind({})
+Login.args = {
   className: "left",
-  children: session
+  children: (
+    <>
+      <Bold to="http://example.com/" className="bold" data-active="true">Feed</Bold><a data-active="true">My draft</a>
+    </>
+  )
 }

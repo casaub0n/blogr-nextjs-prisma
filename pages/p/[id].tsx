@@ -23,15 +23,18 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   }
 }
 
-type Props = {flag: boolean} & PostProps
+type Props = {
+  flag: boolean
+  className: string
+} & PostProps
 
-const Component: React.VFC<Props> = props => (
+const Component: React.VFC<Props> = ({className, ...props}) => (
     <Layout>
-      <div>
+      <div className={className}>
         <h2>{props.flag ? `${props.title} (Draft)` : props.title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
         {/* I changed \"source\" as an element of ReactMarkdown because of deprecated */}
-        <ReactMarkdown children={props.content} />
+        <ReactMarkdown>{props.content}</ReactMarkdown>
       </div>
     </Layout>
   )
@@ -62,6 +65,7 @@ const Container: React.VFC<PostProps> = props => {
   const flag = !props.published
   return (
     <StyledComponent
+      className="page"
       {...props}
       flag={flag}
     />

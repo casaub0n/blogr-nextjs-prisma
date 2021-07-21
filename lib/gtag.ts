@@ -7,14 +7,14 @@ export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID as string
 export const existsGaId = GA_ID !== ''
 
 // PVを測定する
-export const pageview = (path: string) => {
+export const pageview = (path: string): void => {
   window.gtag('config', GA_ID, {
     page_path: path,
   })
 }
 
 // GAイベントを発火させる
-export const event = ({action, category, label, value = ''}: Event) => {
+export const event = ({action, category, label, value = ''}: Event): void => {
   if (!existsGaId) {
     return
   }

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 type RefProps = JSX.IntrinsicElements['a'] & {
   children: React.ReactNode
   dataActive?: string
+  to?: string // TODO: check this!!
 }
 
 type Props = {
@@ -12,12 +13,14 @@ type Props = {
 } & RefProps
 
 type ContainerProps = {
-  ref: string
-} & RefProps
+  to: string
+  children: React.ReactNode
+  dataActive?: string
+}
 
-const Component = React.forwardRef<HTMLAnchorElement, Props>(({children, className, dataActive, ...props}, ref) => {
+const Component = React.forwardRef<HTMLAnchorElement, Props>(({children, className, dataActive, to}, ref) => {
   return (
-    <a className={className} ref={ref} {...props} data-active={dataActive}>
+    <a className={className} href={to} data-active={dataActive} ref={ref}>
       {children}
     </a>
   )
@@ -37,10 +40,10 @@ export const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.VFC<ContainerProps> = ({ref, children, dataActive, ...props}) => {
+const Container: React.VFC<ContainerProps> = ({ to, children, dataActive, ...props }) => {
   return (
-    <Link href={ref}>
-      <StyledComponent className="bold" data-active={dataActive} {...props}>
+    <Link href={to} passHref {...props}>
+      <StyledComponent className="bold" data-active={dataActive}>
         {children}
       </StyledComponent>
     </Link>

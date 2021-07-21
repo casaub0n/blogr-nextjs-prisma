@@ -27,7 +27,9 @@ const Component: React.VFC<Props> = ({ className, ...props }) => {
       >
         <h2>{props.title}</h2>
         <small>By {props.author ? props.author.name : 'Unknow author'}</small>
-        <ReactMarkdown children={props.content} />
+        <ReactMarkdown>
+          {props.content}
+        </ReactMarkdown>
       </div>
     </div>
   )

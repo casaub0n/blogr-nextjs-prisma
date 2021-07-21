@@ -33,7 +33,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
     return (
       <nav className={className}>
         <Left>
-          <Bold ref="/" data-active={isActive('/')}>
+          <Bold to={"/"} data-active={isActive('/')}>
             Feed
           </Bold>
         </Left>
@@ -48,7 +48,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
     return (
       <nav className={className}>
         <Left>
-          <Bold ref="/" data-active={isActive('/')}>
+          <Bold to="/" data-active={isActive('/')}>
             Feed
           </Bold>
           <Link href="/draft">
@@ -78,13 +78,13 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
     return (
       <nav className={className}>
         <Left>
-          <Bold ref="/" data-active={isActive('/')}>
+          <Bold to="/" data-active={isActive('/')}>
             Feed
           </Bold>
         </Left>
         <Right>
           <Link href="/api/auth/signin">
-            <a data-active={isActive('signup')}>Log in</a>
+            <a data-active={isActive('/signup')}>Log in</a>
           </Link>
         </Right>
       </nav>
@@ -94,7 +94,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
   return (
     <nav className={className}>
       <Left>
-        <Bold ref="/" data-active={isActive('/')}>
+        <Bold to="/" data-active={isActive('/')}>
           Feed
         </Bold>
       </Left>
@@ -111,6 +111,7 @@ export const StyledComponent = styled(Component)`
 export const Container: React.VFC = () => {
   const [session, loading] = useSession()
 
+  // login
   if (session && session.user) {
     const props: Props = {
       componentStatus: {
