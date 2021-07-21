@@ -6,9 +6,9 @@ type MeProps = {
   className: string
 }
 
-const MeBasic: React.FC<MeProps> = props =>
+const MeBasic: React.VFC<MeProps> = props =>
     <>
-      <h2 className={props.className}>I'm Takashi Yoshida</h2>
+      <h2 className={props.className}>I&apos;m Takashi Yoshida</h2>
       <p>Web</p>
     </>
 
@@ -16,4 +16,4 @@ export const Me = styled(MeBasic)`
   color: red;
 `
 
-export const MeAvatar = () => <Avatar alt="casaub0n" src="/myimg.jpg"/>
+export const MeAvatar: React.VFC = () => <Avatar alt="casaub0n" src="/myimg.jpg"/>

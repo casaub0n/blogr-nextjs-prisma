@@ -1,7 +1,9 @@
 name: CI
+# TODO: which branch do we need this action https://gist.github.com/cecilemuller/437d7340b9f095cf5635dc9780a05092
 on: [push]
 jobs:
   build:
+    timeout-minutes: 10
     name: Build check
     runs-on: ubuntu-latest
 
@@ -10,17 +12,23 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - name: Build the stack
+        run: docker-compose up -d
       - uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
       - name: yarn install, test
         run: |
           yarn install
+          yarn prisma db push
           yarn build
           yarn test
+          yarn build-storybook
         env:
           CI: true
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: UA-SOME_ANALYTICS_ID-1
+          DATABASE_URL: postgresql://prisma:admin@localhost:54320/prisma?schema=public
       # https://github.com/vercel/next.js/blob/master/errors/no-cache.md
       # https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml
       - name: cache
