@@ -51,7 +51,7 @@
     "styled-components": "5.3.0",
     "tailwindcss": "2.2.7",
     "twin.macro": "2.6.2",
-    "video.js": "7.11.4",
+    "video.js": "7.14.3",
     "videojs-youtube": "2.6.1"
   },
   "devDependencies": {
