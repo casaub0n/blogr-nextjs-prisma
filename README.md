@@ -48,12 +48,13 @@ export default Container
 ```
 
 ### Why should we follow this way?
-At first, component, style and container layer has only one dependency.
+Under type layer, component, style and container layer has only a lower dependency.
 
-the component dependency is type layer.
+the component layer depends on the type layer.
 
-the style dependency is component layer.
+the style layer dependency depends on the component layer.
 
-the container dependency is style layer.
+the container layer depends on the style layer.
 
-moreover, 
+
+This way is adopted, thereby improving 
