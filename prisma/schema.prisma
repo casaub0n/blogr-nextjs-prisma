@@ -2,6 +2,11 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 // https://vercel.com/guides/nextjs-prisma-postgres#step-3.-create-your-database-schema-with-prisma
 
+// Example project: rest-nextjs-api-routes-auth
+// https://github.com/prisma/prisma-examples/blob/latest/typescript/rest-nextjs-api-routes-auth/prisma/schema.prisma
+// This example doesn't use prisma-adapter. I follow the scheme in NextAuth.js document.
+// But providerAccountId needs `Int`. Original scheme define `String`.
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -12,53 +17,60 @@ generator client {
 }
 
 model Post {
-  id Int @default(autoincrement()) @id
+  id String @id @default(cuid())
   title String
   content String?
   published Boolean @default(false)
   author User? @relation(fields: [authorId], references: [id])
-  authorId Int?
+  authorId String?
 }
 
 model User {
-  id Int @default(autoincrement()) @id
+  id String @id @default(cuid())
   name String?
   email String? @unique
-  emailVerified DateTime? @map(name: "email_verified")
+  emailVerified DateTime?
   image String?
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  account Account[]
+  session Session[]
   posts Post[]
-  @@map(name: "users")
 }
 
 model Account {
-  id Int @default(autoincrement()) @id
-  compoundId String @unique @map(name: "compound_id")
-  userId Int @map(name: "user_id")
-  providerType String @map(name: "provider_type")
-  providerId String @map(name: "provider_id")
-  providerAccountId String @map(name: "provider_account_id")
-  refreshToken String? @map(name: "refresh_token")
-  accessToken String? @map(name: "access_token")
-  accessTokenExpires DateTime? @map(name: "access_token_expires")
-  createdAt DateTime @default(now()) @map(name: "create_at")
-  updatedAt DateTime @default(now()) @map(name: "updated_at")
-
-  @@index([providerAccountId], name: "providerAccuntId")
-  @@index([providerId], name: "providerId")
-  @@index([userId], name: "userId")
-
-  @@map(name: "accounts")
+  id String @default(cuid()) @id
+  userId String
+  providerType String
+  providerId String
+  providerAccountId Int
+  refreshToken String?
+  accessToken String?
+  accessTokenExpires DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id])
+  @@unique([providerId, providerAccountId])
 }
 
 model Session {
-  id Int @default(autoincrement()) @id
-  userId Int @map(name: "user_id")
+  id String @id @default(cuid())
+  userId String
   expires DateTime
-  sessionToken String @unique @map(name: "session_token")
-  accessToken String @unique @map(name: "access_token")
-  createdAt DateTime @default(now()) @map(name: "create_at")
-  updatedAt DateTime @default(now()) @map(name: "updated_at")
-  @@map(name: "sessions")
+  sessionToken String @unique
+  accessToken String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id])
+}
+
+model VerificationRequest {
+  id String @id @default(cuid())
+  identifier String
+  token String @unique
+  expires DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([identifier, token])
 }
