@@ -61,7 +61,7 @@ const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.VFC<Props> = (props) => {
+const Container: React.VFC<Props> = ({...props}) => {
   return (
     <StyledComponent
       {...props}
