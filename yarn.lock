@@ -3191,6 +3191,11 @@
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
   integrity sha512-jDJTpta+P4p1NZTFVLHJ/TLFVYVcOqv6l8xwOeBKNPMgY/zDYH/YH7SJbvrr/h1RcS9GzbPcLKGzpuK9cV56UA==
 
+"@next-auth/prisma-adapter@^0.5.3":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@next-auth/prisma-adapter/-/prisma-adapter-0.5.4.tgz#af787a6a49ee9b9e38cedec761c9b7ab4cd99153"
+  integrity sha512-e3rIRNc/1A8puvzxVdlPOaV1NjAWIil2aE+kr51MHmg9uCrvJWf8ruNvLPU3I0QG187AG4i5eePXHkXEbgordQ==
+
 "@next-auth/prisma-legacy-adapter@0.0.1-canary.127":
   version "0.0.1-canary.127"
   resolved "https://registry.yarnpkg.com/@next-auth/prisma-legacy-adapter/-/prisma-legacy-adapter-0.0.1-canary.127.tgz#09223de6d0350e53afc4bd0dda056a2fde27d8d3"
@@ -15630,10 +15635,10 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
-prisma@2.29.0:
-  version "2.29.0"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.29.0.tgz#dbd801eab9b87cb1cb543f0baadac79cd658dd39"
-  integrity sha512-fOnPzF45X3eq4EFVC39MV7pJf1y6VNC8BMqHRJ5+vBvn2SDjxf0OskUM1DUDkZFIViqZykvDlB9HMPH3edOB/A==
+prisma@2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.29.1.tgz#7845f55c7f09955b01f973c6a4b1f330cb212e7d"
+  integrity sha512-fRGh90+z0m3Jw3D6KBE6wyVCRR0w6M6QD93jh+em8IOQycmC48zB8hho8zeri3J9//C0k8fkDeQrRLJUosXROw==
   dependencies:
     "@prisma/engines" "2.29.0-34.1be4cd60b89afa04b192acb1ef47758a39810f3a"
 
@@ -18115,6 +18120,11 @@ table@^6.6.0:
     slice-ansi "^4.0.0"
     string-width "^4.2.0"
     strip-ansi "^6.0.0"
+
+tailwind-nord@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tailwind-nord/-/tailwind-nord-1.2.0.tgz#11b64eb1aa57fe62751af378641468457d9b385a"
+  integrity sha512-8CsntjXDV0P+5jGhr5l5fbFPwEzxODebitSn2kQi8hW4jGYISh2WiIUkz+PRJgboaMgij9SUdI6uaWFHRNoNmw==
 
 tailwindcss@2.2.7:
   version "2.2.7"
