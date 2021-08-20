@@ -1,6 +1,7 @@
 import { NextApiHandler } from 'next'
 import NextAuth from 'next-auth'
-import Adapters from 'next-auth/adapters'
+// import Adapters from 'next-auth/adapters'
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import Providers from 'next-auth/providers'
 import prisma from '../../../lib/prisma'
 
@@ -14,6 +15,6 @@ const options = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
-  adapter: Adapters.Prisma.Adapter({ prisma }),
+  adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
 }
