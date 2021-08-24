@@ -5,13 +5,13 @@ import ReactMarkdown from 'react-markdown'
 
 export type ContainerProps = {
   id: number
-  title: string
-  author: {
+  title?: string
+  author?: {
     name: string
     email: string
   } | null
-  content: string
-  published: string
+  content?: string
+  published?: string
 }
 
 export type Props = {
@@ -27,9 +27,12 @@ const Component: React.VFC<Props> = ({ className, ...props }) => {
       >
         <h2>{props.title}</h2>
         <small>By {props.author ? props.author.name : 'Unknow author'}</small>
-        <ReactMarkdown>
-          {props.content}
-        </ReactMarkdown>
+        {props.content ?
+          <ReactMarkdown>
+            {props.content}
+          </ReactMarkdown>
+          : undefined
+        }
       </div>
     </div>
   )
