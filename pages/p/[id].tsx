@@ -33,8 +33,9 @@ const Component: React.VFC<Props> = ({className, ...props}) => (
       <div className={className}>
         <h2>{props.flag ? `${props.title} (Draft)` : props.title}</h2>
         <p>By {props?.author?.name || "Unknown author"}</p>
-        {/* I changed \"source\" as an element of ReactMarkdown because of deprecated */}
-        <ReactMarkdown>{props.content}</ReactMarkdown>
+        {props.content ?
+          <ReactMarkdown>{props.content}</ReactMarkdown>
+        : undefined}
       </div>
     </Layout>
   )

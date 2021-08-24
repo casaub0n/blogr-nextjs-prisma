@@ -6,6 +6,7 @@ import { GlobalStyles } from 'twin.macro'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
 import Head from 'next/head'
+import { Provider } from 'next-auth/client'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
@@ -26,13 +27,13 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   }, [router.events])
 
   return (
-    <>
+    <Provider session={pageProps.session}>
       <Head>
         <title>practice css</title>
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
-    </>
+    </Provider>
   )
 }
 
