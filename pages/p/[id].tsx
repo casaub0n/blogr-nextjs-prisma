@@ -1,8 +1,7 @@
 import { GetServerSideProps } from 'next'
-import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import styled from 'styled-components'
-import Layout from '../../components/Layout'
+import { useSession } from 'next-auth/client'
+import * as React from 'react'
+import { Id } from '../../components/id'
 import { ContainerProps as PostProps } from '../../components/Post'
 import prisma from '../../lib/prisma'
 
@@ -13,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     },
     include: {
       author: {
-        select: { name: true },
+        select: { name: true, email: true  },
       },
     },
   })
@@ -23,53 +22,13 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   }
 }
 
-type Props = {
-  flag: boolean
-  className: string
-} & PostProps
-
-const Component: React.VFC<Props> = ({className, ...props}) => (
-    <Layout>
-      <div className={className}>
-        <h2>{props.flag ? `${props.title} (Draft)` : props.title}</h2>
-        <p>By {props?.author?.name || "Unknown author"}</p>
-        {props.content ?
-          <ReactMarkdown>{props.content}</ReactMarkdown>
-        : undefined}
-      </div>
-    </Layout>
-  )
-
-const StyledComponent = styled(Component)`
-  .page {
-    background: white;
-    padding: 2rem;
-  }
-
-  .actions {
-    margin-top: 2rem;
-  }
-
-  button {
-    background: #ececec;
-    border:0;
-    border-radius: 0.125rem;
-    padding: 1rem 2rem;
-  }
-
-  button + button {
-    margin-left: 1rem;
-  }
-`
-
 const Container: React.VFC<PostProps> = props => {
-  const flag = !props.published
+  const [session, loading] = useSession()
+  const userHasValidSession = Boolean(session)
+  const postBelongsToUser = session?.user?.email === props.author?.email
+
   return (
-    <StyledComponent
-      className="page"
-      {...props}
-      flag={flag}
-    />
+    <Id {...props} loading={loading} userHasValidation={userHasValidSession} postBelongsToUser={postBelongsToUser} />
   )
 }
 
