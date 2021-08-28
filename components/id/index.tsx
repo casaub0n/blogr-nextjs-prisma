@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
 import { ContainerProps as PostProps } from '../../components/Post'
 import Layout from '../Layout'
+import DeleteButton from './atoms/DeleteButton'
 import PublishButton from './atoms/PublishButton'
 
 type ContainerProps = {
@@ -30,6 +31,9 @@ const Component: React.VFC<Props> = ({className, loading, userHasValidation, pos
         : undefined}
         {!props.published && userHasValidation && postBelongsToUser && (
           <PublishButton id={props.id} />
+        )}
+        {userHasValidation && postBelongsToUser && (
+          <DeleteButton id={props.id} />
         )}
       </div>
     </Layout>
