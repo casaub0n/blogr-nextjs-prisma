@@ -31,6 +31,10 @@ jobs:
           DATABASE_URL: postgresql://prisma:admin@localhost:54320/prisma?schema=public
       # https://github.com/vercel/next.js/blob/master/errors/no-cache.md
       # https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml
+      - name: Deploy storybook to Github Pages
+        run: yarn deploy-storybook -- --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
       - name: cache
         uses: actions/cache@v2
         with:
