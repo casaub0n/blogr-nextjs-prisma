@@ -27,6 +27,7 @@
     "build:tailwind": "tailwindcss build styles/index.css -o styles/storybook.css",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "test": "jest __tests__/.*/*.test.tsx?$",
     "db:dev": "prisma db push --preview-feature"
   },
@@ -35,9 +36,9 @@
     "npm": "⚠️ please use yarn instead 🙇"
   },
   "dependencies": {
-    "@next-auth/prisma-adapter": "0.5.4",
     "@emotion/react": "11.4.1",
     "@material-ui/core": "4.12.3",
+    "@next-auth/prisma-adapter": "0.5.4",
     "@prisma/client": "2.30.0",
     "@zeit/next-css": "1.0.1",
     "autoprefixer": "10.3.3",
@@ -69,6 +70,7 @@
     "@storybook/addons": "6.3.7",
     "@storybook/preset-typescript": "3.0.0",
     "@storybook/react": "6.3.7",
+    "@storybook/storybook-deployer": "^2.8.10",
     "@tailwindcss/ui": "0.7.2",
     "@tailwindcssinjs/macro": "0.17.0",
     "@testing-library/react": "12.0.0",
