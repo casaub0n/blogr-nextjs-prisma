@@ -1,4 +1,5 @@
 # blogr-nextjs-prisma
+[![Node CI](https://github.com/casaub0n/blogr-nextjs-prisma/workflows/Node%20CI/badge.svg)](https://github.com/casaub0n/blogr-nextjs-prisma/actions?query=workflow%3A%22Node+CI%22)
 This is a boilerplate.
 
 ## Compoenet catalog
