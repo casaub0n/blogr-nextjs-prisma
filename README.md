@@ -1,5 +1,9 @@
 # blogr-nextjs-prisma
 This is a boilerplate.
+
+## Compoenet catalog
+https://casaub0n.github.io/blogr-nextjs-prisma/
+
 ## Stack
 - Taildwind css
 - Google analytics
