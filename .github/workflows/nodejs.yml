@@ -24,12 +24,16 @@ jobs:
           yarn prisma db push
           yarn build
           yarn test
-          yarn deploy-storybook
+          yarn build-storybook
         env:
           CI: true
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: UA-SOME_ANALYTICS_ID-1
           DATABASE_URL: postgresql://prisma:admin@localhost:54320/prisma?schema=public
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+      - name: storybook deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
       # https://github.com/vercel/next.js/blob/master/errors/no-cache.md
       # https://github.com/vercel/next.js/blob/canary/.github/workflows/build_test_deploy.yml
       # - name: Deploy storybook to Github Pages
