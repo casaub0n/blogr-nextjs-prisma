@@ -63,7 +63,7 @@
     "@storybook/addon-actions": "6.3.8",
     "@storybook/addon-essentials": "6.3.8",
     "@storybook/addon-info": "5.3.21",
-    "@storybook/addon-knobs": "6.2.9",
+    "@storybook/addon-knobs": "6.3.1",
     "@storybook/addon-links": "6.3.8",
     "@storybook/addon-notes": "5.3.21",
     "@storybook/addon-postcss": "2.0.0",
