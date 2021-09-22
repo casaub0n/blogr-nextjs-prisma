@@ -60,6 +60,7 @@
   "devDependencies": {
     "@babel/core": "7.15.0",
     "@fullhuman/postcss-purgecss": "4.0.3",
+    "@next/eslint-plugin-next": "^11.1.2",
     "@storybook/addon-actions": "6.3.7",
     "@storybook/addon-essentials": "6.3.7",
     "@storybook/addon-info": "5.3.21",
@@ -90,8 +91,8 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "8.3.0",
-    "gh-pages": "3.2.3",
     "eslint-plugin-react": "7.25.1",
+    "gh-pages": "3.2.3",
     "git-cz": "4.7.6",
     "husky": "7.0.2",
     "hygen": "6.1.0",
