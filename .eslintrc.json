@@ -1,10 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint"],
   "ignorePatterns": ["!.eslintrc.js", "!.babelrc.js"],
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
+    "next",
+    // "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     // "plugin:@typescript-eslint/eslint-recommended",
     // "plugin:prettier/recommended",
@@ -32,6 +33,8 @@
     "react/react-in-jsx-scope": 0,
     "react/display-name": 0,
     "react/prop-types": 0,
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/explicit-member-accessibility": 0,
     "@typescript-eslint/indent": 0,

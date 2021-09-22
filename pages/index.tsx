@@ -25,9 +25,9 @@ type Props = {
   className: string
 } & ContainerProps
 
-const Component: React.VFC<Props> = ({className, ...props}) =>
+const Component: React.VFC<Props> = ({...props}) =>
   (
-    <Layout className={className}>
+    <Layout>
       <div className="page">
         <h1>Public Feed</h1>
         <main>

@@ -19,11 +19,13 @@ export type Props = {
   clickEvent: () => void
 } & ContainerProps
 
-const Component: React.VFC<Props> = ({ className, clickEvent, ...props }) => {
+const Component: React.VFC<Props> = ({clickEvent, ...props }) => {
   return (
-    <div className={className} onClick={clickEvent}>
-      <h2>{props.title}</h2>
-      <small>By {props.author ? props.author.name : 'Unknow author'}</small>
+    <div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" onClick={clickEvent}>
+      <div className="font-sans">
+        <h2 className="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">{props.title}</h2>
+      </div>
+      <small className="text-sm md:text-base font-normal text-gray-600">By {props.author ? props.author.name : 'Unknow author'}</small>
       {props.content ?
         <ReactMarkdown>
           {props.content}
@@ -34,10 +36,12 @@ const Component: React.VFC<Props> = ({ className, clickEvent, ...props }) => {
   )
 }
 
-export const StyledComponent = styled(Component)`
-  color: inherit;
-  padding: 2rem;
-`
+// export const StyledComponent = styled(Component)`
+//   color: inherit;
+//   padding: 2rem;
+// `
+
+export const StyledComponent = styled(Component)``
 
 const Container: React.VFC<ContainerProps> = (props) => {
   const clickEvent = () => Router.push('/p/[id]', `/p/${props.id}`)

@@ -1,59 +1,24 @@
 import * as React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import { Header } from './header'
-
-/**
- * TODO: not good
- */
-const GlobalStyle = createGlobalStyle`
-  html {
-    box-sizing: border-box;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
-  input,
-  textarea {
-    font-size: 16px;
-  }
-
-  button {
-    cursor: pointer;
-  }
-`
 
 type IProps = {
   children?: React.ReactNode
-  className?: string
+  // className?: string
 }
 
-const Component: React.VFC<IProps> = ({ children, className }) => (
-  <div className={className}>
+const Component: React.VFC<IProps> = ({ children }) => (
+  <>
     <Header />
-    <div className="layout">{children}</div>
-    <GlobalStyle />
-  </div>
+    {/* container */}
+    <section className="container w-full md:max-x-3xl mx-auto pt-50">
+      {children}
+    </section>
+    {/* /container */}
+  </>
 )
 
-export const StyledComponent = styled(Component)`
-  .layout {
-    padding: 0.2rem;
-  }
-`
+export const StyledComponent = styled(Component)``
 
 const Container: React.VFC<IProps> = ({ children }) => {
   return (
