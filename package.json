@@ -19,6 +19,9 @@
   "repository": {
     "url": "https://github.com/casaub0n/practice-css"
   },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
