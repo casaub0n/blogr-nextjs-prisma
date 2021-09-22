@@ -1,6 +1,6 @@
 import React, { ComponentProps } from 'react'
-import { StyledComponent as Component } from '../components/Layout'
-import { StyledComponent as Post } from '../components/Post'
+import { StyledComponent as Component } from './Layout'
+import { StyledComponent as Post } from './Post'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default { title: 'LayOut' }

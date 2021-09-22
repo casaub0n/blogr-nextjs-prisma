@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react'
 import React, { ComponentProps } from 'react'
-import { StyledComponent as Component } from '../components/DogImage'
+import { StyledComponent as Component } from './DogImage'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default { title: 'Dog Image' }

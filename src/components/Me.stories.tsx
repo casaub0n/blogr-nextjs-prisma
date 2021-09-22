@@ -1,5 +1,5 @@
 import React from 'react'
-import { Me, MeAvatar } from '../components/Me'
+import { Me, MeAvatar } from './Me'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default { title: 'Test for styled-component' }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { AppProps } from 'next/app'
-import '../styles/index.css'
+import '../../styles/index.css'
 // import 'video.js/dist/video-js.css'
 import { GlobalStyles } from 'twin.macro'
 import { useRouter } from 'next/router'
