@@ -61,7 +61,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
           <p>
             {user.name} ({user.email})
           </p>
-          <Link href="/create">
+          <Link href="/create" passHref>
             <button>
               <a>New post</a>
             </button>
