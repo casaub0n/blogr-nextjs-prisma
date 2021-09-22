@@ -7,9 +7,10 @@ module.exports = {
   },
   purge: {
     layers: ['utilities'],
+    root: ['<rootDir>'],
     content: [
       // Paths to your templates...
-      './components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'
+      './src/components/**/*.{js,ts,jsx,tsx}', './src/pages/**/*.{js,ts,jsx,tsx}'
     ],
   },
   theme: {
