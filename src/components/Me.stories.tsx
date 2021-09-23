@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
 import { Me, MeAvatar } from './Me'
+import { Story, Meta } from '@storybook/react'
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { title: 'Test for styled-component' }
+export default { title: 'Test for styled-component' } as Meta
 
-export const withMe = <Me className="hoge" />
+type Props = ComponentProps<typeof Me>
+const MeTemplate: Story<Props> = args => <Me {...args} />
+export const MeDefault = MeTemplate.bind({})
+MeDefault.args = {
+  className: "hoge",
+}
 
 export const withMeAvatar: React.VFC = () => <MeAvatar />
+
+const Template: Story = args => <MeAvatar {...args} />
+export const Default = Template.bind({})
