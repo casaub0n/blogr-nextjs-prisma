@@ -5,6 +5,19 @@ import prisma from '../lib/prisma'
 import Post, { ContainerProps as PostProps } from '../components/Post'
 import styled from 'styled-components'
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const getFeed = async () => {
+  const feed = await prisma.post.findMany({
+    where: { published: true },
+    include: {
+      author: {
+        select: { name: true },
+      },
+    },
+  })
+  return { props: { feed } }
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany({
     where: { published: true },
