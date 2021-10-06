@@ -61,7 +61,7 @@
     "videojs-youtube": "2.6.1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.5",
+    "@babel/core": "7.15.8",
     "@fullhuman/postcss-purgecss": "4.0.3",
     "@next/eslint-plugin-next": "11.1.2",
     "@storybook/addon-actions": "6.3.10",
