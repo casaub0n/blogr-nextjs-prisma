@@ -4,7 +4,10 @@ export type Props = {
   message: string
 } & JSX.IntrinsicElements['input']
 
-const Component: React.VFC<Props> = ({checked, message, ...props}) => {
+/**
+ * @package
+ */
+export const Component: React.VFC<Props> = ({checked, message, ...props}) => {
   return (
     <div className="block">
       <div className="mt-2">

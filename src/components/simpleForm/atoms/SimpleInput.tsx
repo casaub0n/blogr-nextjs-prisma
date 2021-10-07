@@ -1,6 +1,4 @@
 import * as React from 'react'
-// import { useFormContext } from 'react-hook-form'
-import { DeepMap, FieldError, FieldValues, useController, UseControllerProps } from 'react-hook-form'
 
 export type Props = {
   error?: string
@@ -9,7 +7,10 @@ export type Props = {
   labelText: string
 } & JSX.IntrinsicElements['input']
 
-export const Component: React.VFC<Props> = ({labelText, ...props}) => {
+/**
+ * @package
+ */
+ export const Component: React.VFC<Props> = ({labelText, ...props}) => {
   return (
     <div>
       <label className="block text-gray-700 text-sm font-medium">{labelText}</label>
@@ -19,40 +20,42 @@ export const Component: React.VFC<Props> = ({labelText, ...props}) => {
   )
 }
 
-export type ContainerProps<T extends FieldValues> = Props & UseControllerProps<T>
+export { Component as SimpleInput }
 
-// TODO: add error
-// https://zenn.dev/manalink/articles/manalink-react-hook-form-v7
-export const Container = <T extends FieldValues>(props: ContainerProps<T>): JSX.Element => {
-  const { name, control, placeholder, className } = props
-  const {
-    field: { ref, ...rest },
-    formState: { errors },
-  } = useController<T>({ name, control })
 
-  // errors[name] && `${(errors[name] as DeepMap<FieldValues, FieldError>).message}`
-  // const method = useFormContext()
-  // const error = get(errors || method.formState.errors, name)
-  // const { message: messageFromRegister, types } = error
+
+/**
+ * @example
+ * const FORM_NAME = {
+ *  NAME: 'name',
+ *  EMAIL: 'email',
+ *  DATE: 'date'
+ * } as const
+ * type FormName = typeof FORM_NAME[keyof typeof FORM_NAME]
+ * type NewInputProps = ContainerProps<FormName>
+ */
+export type InputProps<T extends string> = Omit<React.ComponentProps<typeof Component>, 'name'> & { name: T }
+
+/**
+ * name is for form, each name must be unique.
+ * FORM_NAME of this example is used for form library.
+ * @example
+ * const FORM_NAME = {
+ *  NAME: 'name',
+ *  EMAIL: 'email',
+ *  DATE: 'date'
+ * } as const
+ * type FormName = typeof FORM_NAME[keyof typeof FORM_NAME]
+ * const Input: React.VFC<ContainerProps<FormName>> = ({name, labelText, ...props}) => {
+ *  return (
+ *    <Input name={name} labelText={labelText} {...props} />
+ *  )
+ * }
+ */
+const Container = <T extends string>({name, ...props}: InputProps<T>): JSX.Element => {
   return (
-    <Component
-      className={className}
-      placeholder={placeholder}
-      ref={ref}
-      {...rest}
-      {...props}
-      error={(errors as DeepMap<FieldValues, FieldError>)[name].message}
-    />
+    <Component name={name} {...props} />
   )
 }
 
-// export const Container: React.VFC<Props> = (props) => {
-//   const formContext = useFormContext()
-//   const { errors } = formContext
-
-//   return (
-//     <Component {...props} error={errors.} />
-//   )
-// }
-
-export { Container as SimpleInput }
+export { Container as WInput }
