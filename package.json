@@ -104,7 +104,7 @@
     "jest-dom": "4.0.0",
     "jest-watch-typeahead": "1.0.0",
     "jsdom": "17.0.0",
-    "lint-staged": "11.2.0",
+    "lint-staged": "11.2.1",
     "postcss-cli": "9.0.1",
     "postcss-focus": "5.0.1",
     "postcss-import": "14.0.2",
