@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["import-access", "@typescript-eslint"],
   "ignorePatterns": ["!.eslintrc.js", "!.babelrc.js"],
   "extends": [
     "eslint:recommended",
@@ -26,6 +26,7 @@
     }
   },
   "rules": {
+    "import-access/jsdoc": ["error"],
     "react/react-in-jsx-scope": 0,
     "react/display-name": 0,
     "react/prop-types": 0,

@@ -19,5 +19,6 @@ module.exports = {
   variants: {},
   plugins: [
     require('tailwind-nord'),
+    require('@tailwindcss/forms')
   ],
 }
