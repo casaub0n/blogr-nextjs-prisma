@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useController, UseControllerProps } from 'react-hook-form'
 
 export type Props = {
   labelText: string
@@ -19,3 +20,15 @@ export const Component: React.VFC<Props> = ({labelText, error, ...props}) => {
 }
 
 export { Component as SimpleTextArea }
+
+export type WTextAreaProps<T> = Props & UseControllerProps<T>
+
+export function WContainer<T>({labelText, error, ...props}: WTextAreaProps<T>): JSX.Element {
+  const { field } = useController(props)
+
+  return (
+    <Component labelText={labelText} placeholder={props.name} error={error} {...field} {...props}  />
+  )
+}
+
+export { WContainer as WTextArea }

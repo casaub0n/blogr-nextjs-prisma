@@ -1,61 +1,35 @@
 import * as React from 'react'
+import { useController, UseControllerProps } from 'react-hook-form'
 
 export type Props = {
   error?: string
   className?: string
-  placeholder?: string
   labelText: string
 } & JSX.IntrinsicElements['input']
 
 /**
  * @package
  */
- export const Component: React.VFC<Props> = ({labelText, ...props}) => {
+ export const Component: React.VFC<Props> = ({labelText, error, ...props}) => {
   return (
     <div>
       <label className="block text-gray-700 text-sm font-medium">{labelText}</label>
       <input type="text" className="w-full border-gray-300 rounded-lg shadow-sm" {...props} />
-      {!!props.error && <p className="text-red-500 text-xs italic">{props.error}</p>}
+      {!!error && <p className="text-red-500 text-xs italic">{error}</p>}
     </div>
   )
 }
 
 export { Component as SimpleInput }
 
+export type WProps<T> = Props & UseControllerProps<T>
 
+export function WContainer<T>({labelText, error, ...props}: WProps<T>): JSX.Element {
+  const { field } = useController(props)
 
-/**
- * @example
- * const FORM_NAME = {
- *  NAME: 'name',
- *  EMAIL: 'email',
- *  DATE: 'date'
- * } as const
- * type FormName = typeof FORM_NAME[keyof typeof FORM_NAME]
- * type NewInputProps = ContainerProps<FormName>
- */
-export type InputProps<T extends string> = Omit<React.ComponentProps<typeof Component>, 'name'> & { name: T }
-
-/**
- * name is for form, each name must be unique.
- * FORM_NAME of this example is used for form library.
- * @example
- * const FORM_NAME = {
- *  NAME: 'name',
- *  EMAIL: 'email',
- *  DATE: 'date'
- * } as const
- * type FormName = typeof FORM_NAME[keyof typeof FORM_NAME]
- * const Input: React.VFC<ContainerProps<FormName>> = ({name, labelText, ...props}) => {
- *  return (
- *    <Input name={name} labelText={labelText} {...props} />
- *  )
- * }
- */
-const Container = <T extends string>({name, ...props}: InputProps<T>): JSX.Element => {
   return (
-    <Component name={name} {...props} />
+    <Component labelText={labelText} placeholder={props.name} error={error} {...field} {...props}  />
   )
 }
 
-export { Container as WInput }
+export { WContainer as WInput }

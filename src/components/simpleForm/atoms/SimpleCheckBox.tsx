@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useController, UseControllerProps } from 'react-hook-form'
 
 export type Props = {
   message: string
@@ -21,3 +22,15 @@ export const Component: React.VFC<Props> = ({checked, message, ...props}) => {
 }
 
 export { Component as SimpleCheckBox }
+
+export type WCheckBoxProps<T> = Props & UseControllerProps<T>
+
+export function WContainer<T>({message, ...props}: WCheckBoxProps<T>): JSX.Element {
+  const { field } = useController(props)
+
+  return (
+    <Component message={message} {...field} {...props}  />
+  )
+}
+
+export { WContainer as WCheckBox }
