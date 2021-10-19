@@ -40,7 +40,7 @@
     "npm": "⚠️ please use yarn instead 🙇"
   },
   "dependencies": {
-    "@emotion/react": "11.4.1",
+    "@emotion/react": "11.5.0",
     "@hookform/resolvers": "2.8.2",
     "@material-ui/core": "4.12.3",
     "@next-auth/prisma-adapter": "0.5.4",
