@@ -59,8 +59,8 @@
     "react-hook-form": "7.17.5",
     "react-markdown": "7.0.1",
     "react-syntax-highlighter": "15.4.4",
-    "swr": "^1.0.1",
     "styled-components": "5.3.3",
+    "swr": "^1.0.1",
     "tailwindcss": "2.2.17",
     "twin.macro": "2.8.0",
     "video.js": "7.15.4",
@@ -70,7 +70,6 @@
   "devDependencies": {
     "@babel/core": "7.15.8",
     "@fullhuman/postcss-purgecss": "4.0.3",
-    "@next/eslint-plugin-next": "11.1.2",
     "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
     "@storybook/addon-info": "5.3.21",
