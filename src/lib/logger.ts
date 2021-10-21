@@ -1,25 +1,10 @@
 import pino from 'pino'
-import { logflarePinoVercel } from 'pino-logflare'
+// import { logflarePinoVercel } from 'pino-logflare'
+// https://github.com/Logflare/pino-logflare/blob/master/docs/VERCEL.md
+// https://github.com/pinojs/pino-nextjs-example
+// https://github.com/Logflare/next-pino-logflare-logging-example
 
-// TODO: define in env
-const { stream, send } = logflarePinoVercel({
-  apiKey: "",
-  sourceToken: ""
+export const logger = pino({
+  name: 'app-name',
+  level: 'debug'
 })
-
-const logger = pino({
-  browser: {
-    transmit: {
-      level: "info",
-      send: send,
-    }
-  },
-  level: "debug",
-  base: {
-    env: process.env.NODE_ENV,
-    // revision: process.env.VERCEL_GITHUB_COMMIT_SHA,
-    revision: '',
-  },
-}, stream)
-
-export default logger

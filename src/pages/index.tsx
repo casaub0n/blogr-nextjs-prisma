@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next'
 import prisma from '../lib/prisma'
 import Post, { ContainerProps as PostProps } from '../components/Post'
 import styled from 'styled-components'
-import logger from '../lib/logger'
+import { logger } from '../lib/logger'
 import { pino as onlyPino } from 'pino'
 
 export const getStaticProps: GetServerSideProps = async () => {
