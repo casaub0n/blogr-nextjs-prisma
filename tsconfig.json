@@ -16,18 +16,14 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2020",
-    "plugins": [
-      {
-        "name": "eslint-plugin-import-access"
-      }
-    ]
+    "target": "ES2020"
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "deployments", ".next", "out"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "postcss.config.js"
+    "postcss.config.js",
+    "globals.d.ts",
   ]
 }

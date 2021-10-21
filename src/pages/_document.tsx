@@ -10,6 +10,7 @@ type MyDocumentProps = {
 }
 
 export default class MyDocument extends Document<MyDocumentProps> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static async getInitialProps(ctx: DocumentContext): Promise<any> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
@@ -35,7 +36,6 @@ export default class MyDocument extends Document<MyDocumentProps> {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   render() {
     return (
       <Html lang="en">
