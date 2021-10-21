@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
@@ -22,12 +21,9 @@
   "exclude": ["node_modules", "deployments", ".next", "out"],
   "include": [
     "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
     "postcss.config.js",
     "globals.d.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "test/**/*.ts",
-    "test/**/*.tsx"
   ]
 }
