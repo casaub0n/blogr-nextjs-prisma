@@ -25,6 +25,7 @@ jobs:
           yarn build
           yarn test
           yarn build-storybook
+          yarn lint
         env:
           CI: true
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: UA-SOME_ANALYTICS_ID-1
