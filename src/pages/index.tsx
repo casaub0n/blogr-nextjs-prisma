@@ -4,6 +4,8 @@ import { GetServerSideProps } from 'next'
 import prisma from '../lib/prisma'
 import Post, { ContainerProps as PostProps } from '../components/Post'
 import styled from 'styled-components'
+import { logger } from '../lib/logger'
+import { pino as onlyPino } from 'pino'
 
 export const getStaticProps: GetServerSideProps = async () => {
   const feed = await prisma.post.findMany({
@@ -62,6 +64,14 @@ const StyledComponent = styled(Component)`
 `
 
 const Container: React.VFC<Props> = ({...props}) => {
+  // Logging to pino-logflare.
+  // Will get sent to Logflare via HTTP.
+  logger.info("Client side logging. Logged with pino-logflare.")
+
+  // Logging with pino.
+  // Will appear only in the console of the client.
+  onlyPino().info("Client side logging. Logged with pino.")
+
   return (
     <StyledComponent
       {...props}
