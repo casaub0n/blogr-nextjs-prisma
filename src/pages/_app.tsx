@@ -16,6 +16,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       return
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleRouteChange = (path: any) => {
       gtag.pageview(path)
     }
