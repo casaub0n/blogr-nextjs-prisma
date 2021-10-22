@@ -17,7 +17,6 @@ https://casaub0n.github.io/blogr-nextjs-prisma/
 - prettier
 
 ## How to implement
-Technically  5 layers strategy that is this way
 ```typescript
 // import layer
 import * as React from 'react'
@@ -52,15 +51,3 @@ const Container: React.VFC<ContainerProps> = ({ children, ...props }) => {
 
 export default Container
 ```
-
-### Why should we follow this way?
-Under type layer, component, style and container layer has only a lower dependency.
-
-the component layer depends on the type layer.
-
-the style layer dependency depends on the component layer.
-
-the container layer depends on the style layer.
-
-
-This way is adopted, thereby improving 
