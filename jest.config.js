@@ -1,19 +1,9 @@
-module.exports = {
-  preset: 'ts-jest',
-  roots: ['<rootDir>/components'],
-  moduleNameMapper: {
-    '^~/(.+)': '<rootDir>/components/$1',
-  },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  globals: {
-    'ts-jest': {
-      tsconfig: {
-        jsx: 'react',
-      },
-    },
-  },
-}
-module.exports = {
+// @ts-check
+
+/**
+ * @type {import('@jest/types').Config.InitialOptions}
+ */
+const jestConfig = {
   roots: ['<rootDir>'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
@@ -33,3 +23,5 @@ module.exports = {
   },
   moduleDirectories: ['node_modules', 'src'],
 }
+
+module.exports = jestConfig

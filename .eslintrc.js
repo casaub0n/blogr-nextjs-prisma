@@ -1,4 +1,9 @@
-module.exports = {
+// @ts-check
+
+/**
+ * @type {import('eslint').Rule.RuleModule}
+ */
+const eslintConfig = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
   "ignorePatterns": ["!.eslintrc.js", "!.babelrc.js"],
@@ -9,3 +14,5 @@ module.exports = {
     "prettier"
   ]
 }
+
+module.exports = eslintConfig

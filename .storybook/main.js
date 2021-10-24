@@ -1,4 +1,4 @@
-module.exports = {
+const storybookMainConfig = {
   stories: ['../src/components/**/*.stories.mdx', '../src/components/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-essentials',
@@ -13,3 +13,5 @@ module.exports = {
     },
   ],
 }
+
+module.exports = storybookMainConfig
