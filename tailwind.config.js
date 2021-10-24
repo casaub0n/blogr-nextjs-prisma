@@ -1,4 +1,9 @@
-module.exports = {
+// @ts-check
+
+/**
+ * https://github.com/tailwindlabs/tailwindcss/discussions/1077
+ */
+const tailwindcssConfig = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
@@ -22,3 +27,5 @@ module.exports = {
     require('@tailwindcss/forms')
   ],
 }
+
+module.exports = tailwindcssConfig

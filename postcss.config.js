@@ -6,7 +6,7 @@ const purgecss = [
   }
 ];
 
-module.exports = {
+const postcssConfig = {
   plugins: {
     'tailwindcss': {},
     'autoprefixer': {
@@ -15,3 +15,5 @@ module.exports = {
     'postcss-nested': {},
   }
 };
+
+module.exports = postcssConfig
