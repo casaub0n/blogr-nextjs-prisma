@@ -18,17 +18,6 @@ type ContainerProps = {
   dataActive?: string
 }
 
-// TODO:https://github.com/facebook/react/issues/14610
-// TODO:https://github.com/facebook/react/issues/13703
-// eslint-disable-next-line react/display-name
-const Component1 = React.forwardRef<HTMLAnchorElement, Props>(({children, className, dataActive, to}, ref) => {
-  return (
-    <a className={className} href={to} data-active={dataActive} ref={ref}>
-      {children}
-    </a>
-  )
-})
-
 const Component: React.VFC<Props> = ({className, to, dataActive, children}) => {
   return (
     <a className={className} href={to} data-active={dataActive}>
