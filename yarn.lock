@@ -15687,10 +15687,10 @@ pino-std-serializers@^4.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-4.0.0.tgz#1791ccd2539c091ae49ce9993205e2cd5dbba1e2"
   integrity sha512-cK0pekc1Kjy5w9V2/n+8MkZwusa6EyyxfeQCB799CQRhRt/CqYKiWs5adeu8Shve2ZNffvfC/7J64A2PJo1W/Q==
 
-pino@7.0.3:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-7.0.3.tgz#b4faa900f63c731f65c9ebb3e6da3ec285b44b91"
-  integrity sha512-tKlw7lqnrdLkQFmrhcTNmZiHkqVHAINwlhYGPKQ8GlyahgImEJ6StZJ/4jWvlbrRLMz4pMPcrzoqZEbNL4dj7w==
+pino@7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-7.0.4.tgz#6cafbbbbe9734ba7d1b04eedebfa0f43ece434eb"
+  integrity sha512-TLFH1aB3tFO+AGjC277ZCShiJsJhHxk3S53uJz++KYij3cXFbOjGJKQuJ7+qghmD9j4ucFbqktkIzI5nEoX6QQ==
   dependencies:
     fast-redact "^3.0.0"
     fastify-warning "^0.2.0"
