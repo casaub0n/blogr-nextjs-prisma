@@ -21,13 +21,21 @@ type ContainerProps = {
 // TODO:https://github.com/facebook/react/issues/14610
 // TODO:https://github.com/facebook/react/issues/13703
 // eslint-disable-next-line react/display-name
-const Component = React.forwardRef<HTMLAnchorElement, Props>(({children, className, dataActive, to}, ref) => {
+const Component1 = React.forwardRef<HTMLAnchorElement, Props>(({children, className, dataActive, to}, ref) => {
   return (
     <a className={className} href={to} data-active={dataActive} ref={ref}>
       {children}
     </a>
   )
 })
+
+const Component: React.VFC<Props> = ({className, to, dataActive, children}) => {
+  return (
+    <a className={className} href={to} data-active={dataActive}>
+      {children}
+    </a>
+  )
+}
 
 export const StyledComponent = styled(Component)`
   font-weight: bold;
@@ -43,10 +51,10 @@ export const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.VFC<ContainerProps> = ({ to, children, dataActive, ...props }) => {
+const Container: React.VFC<ContainerProps> = ({ to, children, dataActive }) => {
   return (
-    <Link href={to} passHref {...props}>
-      <StyledComponent className="bold" data-active={dataActive}>
+    <Link href={to} passHref>
+      <StyledComponent className="bold" data-active={dataActive} to={to}>
         {children}
       </StyledComponent>
     </Link>
