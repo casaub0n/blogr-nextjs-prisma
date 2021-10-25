@@ -49,8 +49,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: yarn install and test
         run: |
-        yarn install
-        yarn test
+          yarn install
+          yarn test
 
   storybook:
     timeout-minutes: 10
@@ -68,8 +68,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: yarn storybook
         run: |
-        yarn install
-        yarn build-storybook
+          yarn install
+          yarn build-storybook
       - name: storybook deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -92,5 +92,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: yarn lint
         run: |
-        yarn install
-        yarn lint
+          yarn install
+          yarn lint
