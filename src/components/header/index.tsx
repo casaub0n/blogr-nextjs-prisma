@@ -7,13 +7,6 @@ import Bold from './atoms/Bold'
 import Left from './atoms/Left'
 import Right from './atoms/Right'
 
-export type ContainerProps = {
-  componentStatus: {
-    loading: boolean
-    session: boolean
-  }
-}
-
 export type User = {
   name?: string | null
   email?: string | null
@@ -22,18 +15,18 @@ export type User = {
 export type Props = {
   className?: string
   handleClick: () => void
-} & ContainerProps & { user: User }
+  session: boolean
+  loading: boolean
+  isActive: (pathname: string) => boolean
+} & { user: User }
 
-// TODO: isActive
-const Component: React.VFC<Props> = ({ className, componentStatus, user, ...props }) => {
-  const router = useRouter()
-  const isActive = (pathname: string) => router.pathname === pathname
+const Component: React.VFC<Props> = ({ className, user, session, loading, isActive, ...props }) => {
 
-  if (componentStatus.loading) {
+  if (loading) {
     return (
       <nav className={className}>
         <Left>
-          <Bold to={"/"} data-active={isActive('/')}>
+          <Bold to="/" data-active={isActive('/')}>
             Feed
           </Bold>
         </Left>
@@ -44,7 +37,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
     )
   }
 
-  if (componentStatus.session) {
+  if (session) {
     return (
       <nav className={className}>
         <Left>
@@ -74,7 +67,7 @@ const Component: React.VFC<Props> = ({ className, componentStatus, user, ...prop
     )
   }
 
-  if (!componentStatus.session) {
+  if (!session) {
     return (
       <nav className={className}>
         <Left>
@@ -111,36 +104,11 @@ export const StyledComponent = styled(Component)`
 export const Container: React.VFC = () => {
   const [session, loading] = useSession()
 
-  // login
-  if (session && session.user) {
-    const props: Props = {
-      componentStatus: {
-        loading: loading,
-        session: Boolean(session)
-      },
-      user: {
-        email: session.user.email,
-        name: session.user.name
-      },
-      handleClick: () => signOut()
-    }
+  const user={email: session?.user?.email, name: session?.user?.name}
+  const router = useRouter()
+  const isActive = (pathname: string) => router.pathname === pathname
 
-    return <StyledComponent className="header" {...props } />
-  }
-
-  const props: Props = {
-    componentStatus: {
-      loading: loading,
-      session: Boolean(session)
-    },
-    user: {
-      email: undefined,
-      name: undefined
-    },
-    handleClick: () => signOut()
-  }
-
-  return <StyledComponent className="header" {...props } />
+  return <StyledComponent className="header" session={Boolean(session)} loading={loading} handleClick={() => signOut()} user={user} isActive={isActive} />
 }
 
 export { Container as Header }
