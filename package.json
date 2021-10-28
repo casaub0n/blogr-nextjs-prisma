@@ -46,7 +46,7 @@
     "@next-auth/prisma-adapter": "0.5.4",
     "@prisma/client": "3.3.0",
     "@tailwindcss/forms": "0.3.4",
-    "autoprefixer": "10.3.7",
+    "autoprefixer": "10.4.0",
     "axios": "0.24.0",
     "clsx": "1.1.1",
     "isomorphic-unfetch": "3.1.0",
