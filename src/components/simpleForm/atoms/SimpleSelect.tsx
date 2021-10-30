@@ -22,16 +22,14 @@ export const Component: React.VFC<Props> = ({labelText, error, ...props}) => {
   )
 }
 
-export { Component as SimpleSelect }
+type ContainerProps<T> = Props & UseControllerProps<T>
 
-export type WSelectProps<T> = Props & UseControllerProps<T>
-
-export function WContainer<T>({labelText, error, ...props}: WSelectProps<T>): JSX.Element {
-  const { field } = useController(props)
+export function Container<T>({labelText, error, ...props}: ContainerProps<T>): JSX.Element {
+  const { field } = useController<T>(props)
 
   return (
     <Component labelText={labelText} placeholder={props.name} error={error} {...field} {...props}  />
   )
 }
 
-export { WContainer as WSelect }
+export { Container as Select }

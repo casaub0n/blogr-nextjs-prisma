@@ -1,46 +1,12 @@
 import * as React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { WInput } from './atoms/SimpleInput'
-import type { WProps } from './atoms/SimpleInput'
-import { useForm } from 'react-hook-form'
+import { Input } from './atoms/SimpleInput'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { SimpleForm } from './atoms/SimpleForm'
-import { WSelect, WSelectProps } from './atoms/SimpleSelect'
-import { WTextAreaProps, WTextArea } from './atoms/SimpleTextArea'
-import { WCheckBoxProps, WCheckBox } from './atoms/SimpleCheckBox'
-
-type FormName = {
-  name: string
-  email: string
-  date: Date
-  event: string
-  detail: string
-  offer: boolean
-}
-
-const Input: React.VFC<WProps<FormName>> = (props) => {
-  return (
-    <WInput {...props} />
-  )
-}
-
-const Select: React.VFC<WSelectProps<FormName>> = (props) => {
-  return (
-    <WSelect {...props} />
-  )
-}
-
-const TextArea: React.VFC<WTextAreaProps<FormName>> = (props) => {
-  return (
-    <WTextArea {...props} />
-  )
-}
-
-const CheckBox: React.VFC<WCheckBoxProps<FormName>> = (props) => {
-  return (
-    <WCheckBox {...props} />
-  )
-}
+import { Select } from './atoms/SimpleSelect'
+import { TextArea } from './atoms/SimpleTextArea'
+import { CheckBox } from './atoms/SimpleCheckBox'
 
 export const schema = z.object({
   name: z.string().nonempty({ message: 'Reauired' }),
@@ -51,13 +17,15 @@ export const schema = z.object({
   offer: z.boolean()
 })
 
+export type FormName = z.infer<typeof schema>
+
 export const Container: React.VFC = () => {
   const { control, formState: { errors }, handleSubmit } = useForm<FormName>({
     mode: 'onChange',
     resolver: zodResolver(schema)
   })
 
-  const onSubmit = async () => {
+  const onSubmit: SubmitHandler<FormName> = async () => {
     await fetch(`https://example.com`, {
       method: 'PUT',
     })
@@ -65,8 +33,8 @@ export const Container: React.VFC = () => {
 
   return (
     <SimpleForm onSubmit={handleSubmit(onSubmit)}>
-      <Input type="text" labelText="Full name" control={control}  name="name" error={errors.name?.message} />
-      <Input type="email" labelText="Email Address" control={control}  name="email" error={errors.email?.message} />
+      <Input type="text" labelText="Full name" control={control} name="name" error={errors.name?.message} />
+      <Input type="email" labelText="Email Address" control={control} name="email" error={errors.email?.message} />
       <Input type="date" labelText="When is your event?" name="date" control={control} error={errors.date?.message} />
       <Select labelText="What type of event is it?" name="event" control={control}>
         <option>Corporate event</option>

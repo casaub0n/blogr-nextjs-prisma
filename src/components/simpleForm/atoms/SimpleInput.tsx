@@ -20,16 +20,14 @@ export type Props = {
   )
 }
 
-export { Component as SimpleInput }
+type ContainerProps<T> = Props & UseControllerProps<T>
 
-export type WProps<T> = Props & UseControllerProps<T>
-
-export function WContainer<T>({labelText, error, ...props}: WProps<T>): JSX.Element {
-  const { field } = useController(props)
+export function Container<T>({labelText, error, ...props}: ContainerProps<T>): JSX.Element {
+  const { field } = useController<T>(props)
 
   return (
     <Component labelText={labelText} placeholder={props.name} error={error} {...field} {...props}  />
   )
 }
 
-export { WContainer as WInput }
+export { Container as Input }
