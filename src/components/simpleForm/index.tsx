@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
 import * as z from 'zod'
 import { Input } from './atoms/SimpleInput'
 import { SubmitHandler, useForm } from 'react-hook-form'
