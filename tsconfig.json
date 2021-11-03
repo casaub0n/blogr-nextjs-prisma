@@ -6,7 +6,11 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
@@ -16,14 +20,20 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2020"
+    "target": "ES2020",
+    "incremental": true
   },
-  "exclude": ["node_modules", "deployments", ".next", "out"],
+  "exclude": [
+    "node_modules",
+    "deployments",
+    ".next",
+    "out"
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "postcss.config.js",
-    "globals.d.ts",
+    "globals.d.ts"
   ]
 }
