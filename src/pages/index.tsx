@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import prisma from '../lib/prisma'
 import Post, { ContainerProps as PostProps } from '../components/Post'
 import styled from 'styled-components'
@@ -61,7 +61,7 @@ const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.VFC<Props> = ({...props}) => {
+const Container: NextPage<Props> = ({...props}) => {
   return (
     <StyledComponent
       {...props}
