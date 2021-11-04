@@ -1,11 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Layout from './Layout'
+import { PostProps } from '../lib/types/PostProps'
 import Post from './Post'
-
-type Post = {
-  id: number
-}
+import { useSession } from 'next-auth/client'
 
 type Props = {
   className: string
@@ -14,8 +12,7 @@ type Props = {
 }
 
 type ContainerProps = {
-  drafts: [Post],
-  login: true | false
+  drafts: PostProps[]
 }
 
 const Component: React.VFC<Props> = ({ className, children, login }) => {
@@ -34,13 +31,15 @@ const Component: React.VFC<Props> = ({ className, children, login }) => {
 
 export const StyledComponent = styled(Component)``
 
-const Container: React.VFC<ContainerProps> = ({ drafts, login }) => {
+const Container: React.VFC<ContainerProps> = ({ drafts }) => {
+  const [session] = useSession()
+
   return (
     <Layout>
-      <StyledComponent className="page" login={login}>
+      <StyledComponent className="page" login={Boolean(session)}>
         {drafts.map((post) => (
           <div key={post.id} className="post">
-            <Post id={post.id} />
+            <Post {...post} />
           </div>
         ))}
       </StyledComponent>

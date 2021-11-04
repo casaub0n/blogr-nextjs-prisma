@@ -1,10 +1,14 @@
-import { GetServerSideProps } from 'next'
-import { useSession } from 'next-auth/client'
+import { GetServerSideProps, NextPage } from 'next'
 import * as React from 'react'
-import { Id } from '../../components/id'
-import { ContainerProps as PostProps } from '../../components/Post'
+import { PublishedPost } from '../../components/publishedpost'
+import { PostProps } from '../../lib/types/PostProps'
 import prisma from '../../lib/prisma'
 
+/**
+ * get selected post
+ * @param param0
+ * @returns
+ */
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const post = await prisma.post.findUnique({
     where: {
@@ -18,17 +22,17 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   })
 
   return {
-    props: { post },
+    props: { post }
   }
 }
 
-const Container: React.VFC<PostProps> = props => {
-  const [session, loading] = useSession()
-  const userHasValidSession = Boolean(session)
-  const postBelongsToUser = session?.user?.email === props.author?.email
+type ContainerProps = {
+  post: PostProps
+}
 
+const Container: NextPage<ContainerProps> = (props) => {
   return (
-    <Id {...props} loading={loading} userHasValidation={userHasValidSession} postBelongsToUser={postBelongsToUser} />
+    <PublishedPost {...props} />
   )
 }
 

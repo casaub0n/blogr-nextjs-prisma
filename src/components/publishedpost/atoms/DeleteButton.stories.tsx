@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react'
 import React, { ComponentProps } from 'react'
-import { StyledComponent as Component } from './PublishButton'
+import { StyledComponent as Component } from './DeleteButton'
 
 export default {
-  title: 'Publish Button',
+  title: 'Delete Button',
   component: Component
 } as Meta
 
@@ -19,7 +19,7 @@ const hoge = async (id: number) => {
 
 export const Default = Template.bind({})
 Default.args = {
-  className: "publish_button",
-  id: 2,
+  className: "delete_button",
+  id: '2',
   handleClickEvent: hoge
 }

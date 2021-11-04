@@ -2,7 +2,8 @@ import * as React from 'react'
 import Layout from '../components/Layout'
 import { GetServerSideProps, NextPage } from 'next'
 import prisma from '../lib/prisma'
-import Post, { ContainerProps as PostProps } from '../components/Post'
+import Post from '../components/Post'
+import { PostProps } from '../lib/types/PostProps'
 import styled from 'styled-components'
 
 export const getStaticProps: GetServerSideProps = async () => {

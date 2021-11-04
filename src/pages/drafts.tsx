@@ -1,9 +1,9 @@
-import { GetServerSideProps } from 'next'
-import { getSession, useSession } from 'next-auth/client'
+import { GetServerSideProps, NextPage } from 'next'
+import { getSession } from 'next-auth/client'
 import * as React from 'react'
 import Draft from '../components/Draft'
-import { ComponentProps } from 'react'
 import prisma from '../lib/prisma'
+import { PostProps } from '../lib/types/PostProps'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await getSession({ req })
@@ -23,18 +23,20 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
       }
     }
   })
+
   return {
     props: { drafts }
   }
 }
 
-type Props = ComponentProps<typeof Draft>
+// TODO: maybe export to lib
+type ContainerProps = {
+  drafts: PostProps[]
+}
 
-const Container: React.VFC<Props> = ({ drafts }) => {
-  const [session] = useSession()
-
+const Container: NextPage<ContainerProps> = (props) => {
   return (
-    <Draft drafts={drafts} login={Boolean(session)} />
+    <Draft {...props} />
   )
 }
 
