@@ -3,13 +3,13 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 type ContainerProps = {
-  id: number
+  id: string
 }
 
 type Props = {
   className: string
-  id: number
-  handleClickEvent: (id: number) => Promise<void>
+  id: string
+  handleClickEvent: (id: string) => Promise<void>
 } & ContainerProps
 
 const Component: React.VFC<Props> = ({className, id, handleClickEvent}) => {
@@ -25,7 +25,11 @@ export const StyledComponent = styled(Component)`
   padding: 1rem 2rem;
 `
 
-async function deletePost(id: number): Promise<void> {
+/**
+ * delete post
+ * @param id of post
+ */
+const deletePost = async (id: string): Promise<void> => {
   await fetch(`http://localhost:3000/api/post/${id}`, {
     method: 'DELETE'
   })

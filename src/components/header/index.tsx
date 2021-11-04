@@ -44,8 +44,8 @@ const Component: React.VFC<Props> = ({ className, user, session, loading, isActi
           <Bold to="/" data-active={isActive('/')}>
             Feed
           </Bold>
-          <Link href="/draft">
-            <a data-active={isActive('/draft')}>
+          <Link href="/drafts">
+            <a data-active={isActive('/drafts')}>
               My draft
             </a>
           </Link>

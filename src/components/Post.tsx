@@ -2,22 +2,12 @@ import * as React from 'react'
 import Router from 'next/router'
 import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
-
-export type ContainerProps = {
-  id: number
-  title?: string
-  author?: {
-    name: string
-    email: string
-  } | null
-  content?: string
-  published?: string
-}
+import { PostProps } from '../lib/types/PostProps'
 
 export type Props = {
   className?: string
   clickEvent: () => void
-} & ContainerProps
+} & PostProps
 
 const Component: React.VFC<Props> = ({clickEvent, ...props }) => {
   return (
@@ -43,7 +33,7 @@ const Component: React.VFC<Props> = ({clickEvent, ...props }) => {
 
 export const StyledComponent = styled(Component)``
 
-const Container: React.VFC<ContainerProps> = (props) => {
+const Container: React.VFC<PostProps> = (props) => {
   const clickEvent = () => Router.push('/p/[id]', `/p/${props.id}`)
 
   return (

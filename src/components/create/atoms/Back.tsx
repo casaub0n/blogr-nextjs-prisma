@@ -2,26 +2,20 @@ import Router from 'next/router'
 import * as React from 'react'
 import styled from 'styled-components'
 
-type RefProps = JSX.IntrinsicElements['a'] & {
-  children: React.ReactNode
-  to?: string // TODO: check this!!
-}
-
 type Props = {
   className: string
   clickEvent: () => void
-} & RefProps
+  children: React.ReactNode
+  href: string
+} & JSX.IntrinsicElements['a']
 
-// TODO:https://github.com/facebook/react/issues/14610
-// TODO:https://github.com/facebook/react/issues/13703
-// eslint-disable-next-line react/display-name
-const Component = React.forwardRef<HTMLAnchorElement, Props>(({children, className, clickEvent, to}, ref) => {
+const Component: React.VFC<Props> = ({children, className, clickEvent, href, ...props}) => {
   return (
-    <a className={className} href={to} onClick={clickEvent} ref={ref}>
+    <a className={className} href={href} onClick={clickEvent} {...props}>
       {children}
     </a>
   )
-})
+}
 
 export const StyledComponent = styled(Component)`
   margin-left: 1rem;
@@ -31,11 +25,9 @@ const Container: React.VFC = () => {
   const clickEvent = () => Router.push('/')
 
   return (
-    <a href="#">
-      <StyledComponent className="back" clickEvent={clickEvent}>
-        or Cancel
-      </StyledComponent>
-    </a>
+    <StyledComponent className="back" clickEvent={clickEvent} href="#">
+      or Cancel
+    </StyledComponent>
   )
 }
 

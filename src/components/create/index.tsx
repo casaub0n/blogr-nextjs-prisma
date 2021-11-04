@@ -2,6 +2,7 @@ import * as React from 'react'
 import Layout from '../Layout'
 import styled from 'styled-components'
 import Back from './atoms/Back'
+import Router from 'next/router'
 
 type ContainerProps = {
   title: string
@@ -65,8 +66,37 @@ export const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.VFC<ContainerProps> = (props) => {
-  return <Layout><StyledComponent className="page" {...props} /></Layout>
+const Container: React.VFC = () => {
+  const [title, setTitle] = React.useState('')
+  const titleEvent = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    return setTitle(e.target.value)
+  }
+
+  const [content, setContent] = React.useState('')
+  const contentEvent = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
+    return setContent(e.target.value)
+  }
+
+  const submitData = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    try {
+      const body = { title, content }
+      await fetch('/api/post', {
+        method: 'Post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      await Router.push('/drafts')
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  return (
+    <Layout>
+      <StyledComponent className="page" title={title} titleEvent={titleEvent} content={content} contentEvent={contentEvent} submitData={submitData} />
+    </Layout>
+  )
 }
 
 export { Container as Create }
