@@ -14710,7 +14710,7 @@ next-auth@3.29.0:
     preact-render-to-string "^5.1.14"
     querystring "^0.2.0"
 
-next-head-seo@^0.1.2:
+next-head-seo@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/next-head-seo/-/next-head-seo-0.1.2.tgz#441ff8e2a0010fc2458648775cecd8cee4c1b11a"
   integrity sha512-O2iyItquVrfV7xkEpHQny7nvG+dP992auQBAP7wde0D2xm9F4CPFbBiQuxrSNGXewIShadlpekmqx6GcM9ArqQ==
