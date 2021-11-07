@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
 import Head from 'next/head'
 import { Provider } from 'next-auth/client'
+import NextHeadSeo from 'next-head-seo'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
@@ -30,7 +31,14 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider session={pageProps.session}>
       <Head>
-        <title>practice css</title>
+        <NextHeadSeo
+          title="casaub0n blog"
+          description="This is casaub0n blog."
+          canonical="https://casaub0n.dev"
+          og={{
+            title: "casaub0n blog"
+          }}
+        />
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
