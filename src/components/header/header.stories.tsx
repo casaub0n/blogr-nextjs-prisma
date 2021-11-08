@@ -1,13 +1,31 @@
-import React, { ComponentProps } from 'react'
 import { Meta, Story } from '@storybook/react'
+import React, { ComponentProps } from 'react'
+
 import { StyledComponent as Component } from './index'
+
+type Props = ComponentProps<typeof Component>
 
 export default {
   title: 'header',
   component: Component,
-} as Meta
-
-type Props = ComponentProps<typeof Component>
+  argTypes: {
+    className: {
+      description: 'html class name'
+    },
+    session: {
+      description: 'session status for authorization'
+    },
+    loading: {
+      description: 'loading for data'
+    },
+    handleClick: {
+      description: 'click event'
+    },
+    isActive: {
+      description: 'check active link'
+    }
+  }
+} as Meta<Props>
 
 const Template: Story<Props> = args => <Component {...args} />
 
@@ -16,7 +34,7 @@ UnLogin.args = {
   className: "header",
   session: false,
   loading: false,
-  handleClick: () => console.log('click'),
+  handleClick: () => console.info('click'),
   isActive: (pathName: 'example@example.com') => pathName === 'example@example.com'
 }
 
@@ -25,7 +43,7 @@ Loading.args = {
   className: 'header',
   session: false,
   loading: true,
-  handleClick: () => console.log('click'),
+  handleClick: () => console.info('click'),
   isActive: (pathName: 'example@example.com') => pathName === 'example@example.com'
 }
 
@@ -38,6 +56,6 @@ SignedUp.args = {
     email: 'example@example.com',
     name: 'Takeshi'
   },
-  handleClick: () => console.log('click'),
+  handleClick: () => console.info('click'),
   isActive: (pathName: 'example@example.com') => pathName === 'example@example.com'
 }

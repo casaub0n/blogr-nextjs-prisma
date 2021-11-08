@@ -1,4 +1,5 @@
 import React, { ComponentProps } from 'react'
+
 import { StyledComponent as Component } from './Layout'
 import { StyledComponent as Post } from './Post'
 

@@ -1,13 +1,15 @@
-import * as React from 'react'
-import { AppProps } from 'next/app'
 import '../../styles/index.css'
-// import 'video.js/dist/video-js.css'
-import { GlobalStyles } from 'twin.macro'
+
+import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import * as gtag from '../lib/gtag'
 // import Head from 'next/head'
 import { Provider } from 'next-auth/client'
 import NextHeadSeo from 'next-head-seo'
+import * as React from 'react'
+// import 'video.js/dist/video-js.css'
+import { GlobalStyles } from 'twin.macro'
+
+import * as gtag from '../lib/gtag'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()

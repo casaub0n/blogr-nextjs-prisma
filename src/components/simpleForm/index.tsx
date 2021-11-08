@@ -1,12 +1,13 @@
-import * as React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
-import * as z from 'zod'
-import { Input } from './atoms/SimpleInput'
+import * as React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import * as z from 'zod'
+
+import { CheckBox } from './atoms/SimpleCheckBox'
 import { SimpleForm } from './atoms/SimpleForm'
+import { Input } from './atoms/SimpleInput'
 import { Select } from './atoms/SimpleSelect'
 import { TextArea } from './atoms/SimpleTextArea'
-import { CheckBox } from './atoms/SimpleCheckBox'
 
 export const schema = z.object({
   name: z.string().nonempty({ message: 'Reauired' }),

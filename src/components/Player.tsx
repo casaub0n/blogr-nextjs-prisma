@@ -1,6 +1,7 @@
+import 'videojs-youtube'
+
 import * as React from 'react'
 import videojs, { VideoJsPlayerOptions } from 'video.js'
-import 'videojs-youtube'
 
 export type PlayerProps = {
   videoJsOptions?: VideoJsPlayerOptions

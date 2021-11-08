@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+
 import DogImage from "../components/DogImage";
 
 const Dog: NextPage = () => (

@@ -1,13 +1,25 @@
-import React, { ComponentProps } from 'react'
 import { Meta, Story } from '@storybook/react'
+import React, { ComponentProps } from 'react'
+
 import { StyledComponent as Component } from './Bold'
+
+type Props = ComponentProps<typeof Component>
 
 export default {
   title: 'Bold button',
   component: Component,
-} as Meta
-
-type Props = ComponentProps<typeof Component>
+  argTypes: {
+    href: {
+      description: 'link'
+    },
+    className: {
+      description: 'class name for html'
+    },
+    children: {
+      description: 'Only strings'
+    }
+  }
+} as Meta<Props>
 
 const Template: Story<Props> = args => <Component {...args} />
 

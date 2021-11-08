@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
 import { getSession } from 'next-auth/client'
 import * as React from 'react'
+
 import Draft from '../components/Draft'
 import prisma from '../lib/prisma'
 import { PostProps } from '../lib/types/PostProps'

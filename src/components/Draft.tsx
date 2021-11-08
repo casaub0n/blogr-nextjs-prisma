@@ -1,9 +1,10 @@
+import { useSession } from 'next-auth/client'
 import * as React from 'react'
 import styled from 'styled-components'
-import Layout from './Layout'
+
 import { PostProps } from '../lib/types/PostProps'
+import Layout from './Layout'
 import Post from './Post'
-import { useSession } from 'next-auth/client'
 
 type Props = {
   className: string

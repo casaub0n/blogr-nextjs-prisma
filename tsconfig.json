@@ -21,7 +21,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2020",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "eslint-plugin-import-access"
+      }
+    ]
   },
   "exclude": [
     "node_modules",

@@ -1,11 +1,12 @@
-import React, { ComponentProps } from 'react'
 import { Meta, Story } from '@storybook/react'
+import React, { ComponentProps } from 'react'
+
+import { SimpleButton } from './SimpleButton'
+import { Component as CheckBox } from './SimpleCheckBox'
 import { Component } from './SimpleForm'
 import { Component as Input } from './SimpleInput'
 import { Component as Select } from './SimpleSelect'
 import { Component as TextArea } from './SimpleTextArea'
-import { Component as CheckBox } from './SimpleCheckBox'
-import { SimpleButton } from './SimpleButton'
 
 export default {
   title: 'Simple Form',

@@ -1,8 +1,9 @@
-import * as React from 'react'
-import Layout from '../Layout'
-import styled from 'styled-components'
-import Back from './atoms/Back'
 import Router from 'next/router'
+import * as React from 'react'
+import styled from 'styled-components'
+
+import Layout from '../Layout'
+import Back from './atoms/Back'
 
 type ContainerProps = {
   title: string
