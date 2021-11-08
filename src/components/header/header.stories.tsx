@@ -3,12 +3,29 @@ import React, { ComponentProps } from 'react'
 
 import { StyledComponent as Component } from './index'
 
+type Props = ComponentProps<typeof Component>
+
 export default {
   title: 'header',
   component: Component,
-} as Meta
-
-type Props = ComponentProps<typeof Component>
+  argTypes: {
+    className: {
+      description: 'html class name'
+    },
+    session: {
+      description: 'session status for authorization'
+    },
+    loading: {
+      description: 'loading for data'
+    },
+    handleClick: {
+      description: 'click event'
+    },
+    isActive: {
+      description: 'check active link'
+    }
+  }
+} as Meta<Props>
 
 const Template: Story<Props> = args => <Component {...args} />
 
