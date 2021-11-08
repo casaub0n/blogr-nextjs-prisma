@@ -1,8 +1,9 @@
 import { GetServerSideProps, NextPage } from 'next'
 import * as React from 'react'
+
 import { PublishedPost } from '../../components/publishedpost'
-import { PostProps } from '../../lib/types/PostProps'
 import prisma from '../../lib/prisma'
+import { PostProps } from '../../lib/types/PostProps'
 
 /**
  * get selected post

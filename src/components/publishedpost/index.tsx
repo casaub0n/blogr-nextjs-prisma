@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/client'
 import * as React from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
+
 import type { PostProps } from '../../lib/types/PostProps'
 import Layout from '../Layout'
 import DeleteButton from './atoms/DeleteButton'
@@ -72,10 +73,6 @@ export const Container: React.VFC<ContainerProps> = (props) => {
   const userHasValidSession = Boolean(session)
   const { post } = props
   const postBelongsToUser = session?.user?.email === post.author?.email
-
-  console.log(props)
-  console.log(post.author)
-  console.log(post.author?.email)
 
   return (
     <StyledComponent className="page" loading={loading} userHasValidation={userHasValidSession} postBelongsToUser={postBelongsToUser} published={post.published} title={post.title} author={post.author} content={post.content} id={post.id} />

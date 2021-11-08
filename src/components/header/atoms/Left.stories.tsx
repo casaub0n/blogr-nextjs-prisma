@@ -1,7 +1,8 @@
-import React, { ComponentProps } from 'react'
 import { Meta, Story } from '@storybook/react'
-import { StyledComponent as Component } from './Left'
+import React, { ComponentProps } from 'react'
+
 import { StyledComponent as Bold } from './Bold'
+import { StyledComponent as Component } from './Left'
 
 export default {
   title: 'Left component',

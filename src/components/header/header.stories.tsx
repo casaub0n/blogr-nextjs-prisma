@@ -1,5 +1,6 @@
-import React, { ComponentProps } from 'react'
 import { Meta, Story } from '@storybook/react'
+import React, { ComponentProps } from 'react'
+
 import { StyledComponent as Component } from './index'
 
 export default {
@@ -16,7 +17,7 @@ UnLogin.args = {
   className: "header",
   session: false,
   loading: false,
-  handleClick: () => console.log('click'),
+  handleClick: () => console.info('click'),
   isActive: (pathName: 'example@example.com') => pathName === 'example@example.com'
 }
 
@@ -25,7 +26,7 @@ Loading.args = {
   className: 'header',
   session: false,
   loading: true,
-  handleClick: () => console.log('click'),
+  handleClick: () => console.info('click'),
   isActive: (pathName: 'example@example.com') => pathName === 'example@example.com'
 }
 
@@ -38,6 +39,6 @@ SignedUp.args = {
     email: 'example@example.com',
     name: 'Takeshi'
   },
-  handleClick: () => console.log('click'),
+  handleClick: () => console.info('click'),
   isActive: (pathName: 'example@example.com') => pathName === 'example@example.com'
 }

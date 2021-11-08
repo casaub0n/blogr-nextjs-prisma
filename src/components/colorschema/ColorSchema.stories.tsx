@@ -1,5 +1,5 @@
-import React from 'react'
 import { Meta, Story } from '@storybook/react'
+import React from 'react'
 
 export default {
   title: 'Color Schema',

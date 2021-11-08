@@ -1,6 +1,6 @@
+import Image from 'next/image'
 import * as React from 'react'
 import styled from 'styled-components'
-import Image from 'next/image'
 
 type MeProps = {
   className: string

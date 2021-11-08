@@ -1,5 +1,6 @@
-import { Story, Meta } from '@storybook/react'
+import { Meta,Story } from '@storybook/react'
 import React, { ComponentProps } from 'react'
+
 import { StyledComponent as Component } from './DogImage'
 
 export default { title: 'Dog Image' } as Meta

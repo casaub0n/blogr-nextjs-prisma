@@ -1,6 +1,7 @@
+import { Meta, Story } from '@storybook/react'
 import Router from 'next/router'
 import React, { ComponentProps } from 'react'
-import { Meta, Story } from '@storybook/react'
+
 import { StyledComponent as Component } from './Back'
 
 export default {

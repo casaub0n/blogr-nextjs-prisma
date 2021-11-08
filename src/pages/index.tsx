@@ -1,10 +1,11 @@
-import * as React from 'react'
-import Layout from '../components/Layout'
 import { GetServerSideProps, NextPage } from 'next'
-import prisma from '../lib/prisma'
-import Post from '../components/Post'
-import { PostProps } from '../lib/types/PostProps'
+import * as React from 'react'
 import styled from 'styled-components'
+
+import Layout from '../components/Layout'
+import Post from '../components/Post'
+import prisma from '../lib/prisma'
+import { PostProps } from '../lib/types/PostProps'
 
 export const getStaticProps: GetServerSideProps = async () => {
   const feed = await prisma.post.findMany({
