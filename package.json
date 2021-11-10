@@ -108,7 +108,7 @@
     "eslint-plugin-import-access": "1.0.0",
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "eslint-plugin-unused-imports": "1.1.5",
+    "eslint-plugin-unused-imports": "2.0.0",
     "gh-pages": "3.2.3",
     "git-cz": "4.8.0",
     "global-jsdom": "8.3.0",
