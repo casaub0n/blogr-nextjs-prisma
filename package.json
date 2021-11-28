@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
-    "@fullhuman/postcss-purgecss": "4.0.3",
+    "@fullhuman/postcss-purgecss": "4.1.1",
     "@storybook/addon-actions": "6.4.0",
     "@storybook/addon-essentials": "6.4.0",
     "@storybook/addon-info": "5.3.21",
