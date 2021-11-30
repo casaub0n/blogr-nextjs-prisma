@@ -1,4 +1,4 @@
-import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import * as React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as z from 'zod'
