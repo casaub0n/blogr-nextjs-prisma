@@ -1,4 +1,4 @@
-import { zodResolver } from '@hookform/resolvers/zod/dist/zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import * as React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as z from 'zod'
@@ -21,7 +21,7 @@ export const schema = z.object({
 export type FormName = z.infer<typeof schema>
 
 export const Container: React.VFC = () => {
-  const { control, formState: { errors }, handleSubmit } = useForm<FormName>({
+  const { register, formState: { errors }, handleSubmit } = useForm<FormName>({
     mode: 'onChange',
     resolver: zodResolver(schema)
   })
@@ -34,17 +34,17 @@ export const Container: React.VFC = () => {
 
   return (
     <SimpleForm onSubmit={handleSubmit(onSubmit)}>
-      <Input type="text" labelText="Full name" control={control} name="name" error={errors.name?.message} />
-      <Input type="email" labelText="Email Address" control={control} name="email" error={errors.email?.message} />
-      <Input type="date" labelText="When is your event?" name="date" control={control} error={errors.date?.message} />
-      <Select labelText="What type of event is it?" name="event" control={control}>
+      <Input type="text" labelText="Full name" {...register("name")} error={errors.name?.message} />
+      <Input type="email" labelText="Email Address" {...register("email")} error={errors.email?.message} />
+      <Input type="date" labelText="When is your event?" {...register("date")} error={errors.date?.message} />
+      <Select labelText="What type of event is it?" {...register("event")}>
         <option>Corporate event</option>
         <option>Wedding</option>
         <option>Birthday</option>
         <option>Other</option>
       </Select>
-      <TextArea labelText="Additional details" rows={3} name="detail" control={control} error={errors.detail?.message} />
-      <CheckBox message="Email me news and special offers" checked control={control} name="offer" />
+      <TextArea labelText="Additional details" rows={3} {...register("detail")} error={errors.detail?.message} />
+      <CheckBox message="Email me news and special offers" checked {...register("email")} />
     </SimpleForm>
   )
 }

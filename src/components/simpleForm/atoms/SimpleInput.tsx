@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useController, UseControllerProps } from 'react-hook-form'
 
 export type Props = {
   error?: string
@@ -20,14 +19,4 @@ export type Props = {
   )
 }
 
-type ContainerProps<T> = Props & UseControllerProps<T>
-
-export function Container<T>({labelText, error, ...props}: ContainerProps<T>): JSX.Element {
-  const { field } = useController<T>(props)
-
-  return (
-    <Component labelText={labelText} placeholder={props.name} error={error} {...field} {...props}  />
-  )
-}
-
-export { Container as Input }
+export { Component as Input }
