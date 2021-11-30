@@ -1,7 +1,7 @@
 # blogr-nextjs-prisma
 [![CI](https://github.com/casaub0n/blogr-nextjs-prisma/workflows/CI/badge.svg)](https://github.com/casaub0n/blogr-nextjs-prisma/actions?query=workflow%3A%22Node+CI%22)
 
-This is the minimum blog is based on [How to Build a Fullstack App with Next.js, Prisma, and PostgreSQL](https://vercel.com/guides/nextjs-prisma-postgres)
+This is the minimum CMS is based on [How to Build a Fullstack App with Next.js, Prisma, and PostgreSQL](https://vercel.com/guides/nextjs-prisma-postgres)
 
 ## Compoenet catalog
 https://casaub0n.github.io/blogr-nextjs-prisma/
