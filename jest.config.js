@@ -1,9 +1,12 @@
 // @ts-check
 
-/**
- * @type {import('@jest/types').Config.InitialOptions}
- */
-const jestConfig = {
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const nextJest = require('next/jest')
+
+// eslint-disable-next-line no-undef
+const createJestConfig = nextJest({ dir: './' })
+
+const customJestConfig = {
   roots: ['<rootDir>'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
@@ -24,4 +27,4 @@ const jestConfig = {
   moduleDirectories: ['node_modules', 'src'],
 }
 
-module.exports = jestConfig
+module.exports = createJestConfig(customJestConfig)
