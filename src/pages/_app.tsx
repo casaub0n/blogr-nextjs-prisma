@@ -2,16 +2,13 @@ import '../../styles/index.css'
 
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-// import Head from 'next/head'
 import { Provider } from 'next-auth/client'
 import NextHeadSeo from 'next-head-seo'
 import * as React from 'react'
-// import 'video.js/dist/video-js.css'
-import { GlobalStyles } from 'twin.macro'
 
 import * as gtag from '../lib/gtag'
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
 
   React.useEffect(() => {
@@ -42,7 +39,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           }}
         />
       </head>
-      <GlobalStyles />
+      {/* <GlobalStyles /> */}
       <Component {...pageProps} />
     </Provider>
   )
