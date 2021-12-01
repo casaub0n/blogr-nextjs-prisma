@@ -125,7 +125,7 @@
     "global-jsdom": "8.3.0",
     "husky": "7.0.4",
     "hygen": "6.1.0",
-    "jest": "27.4.2",
+    "jest": "27.4.3",
     "jest-dom": "4.0.0",
     "jest-watch-typeahead": "1.0.0",
     "jsdom": "18.1.1",
