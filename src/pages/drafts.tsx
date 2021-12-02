@@ -1,5 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next'
-import { getSession } from 'next-auth/client'
+import { getSession } from 'next-auth/react'
 import * as React from 'react'
 
 import Draft from '../components/Draft'

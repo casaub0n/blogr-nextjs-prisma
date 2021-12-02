@@ -2,7 +2,7 @@ import '../../styles/index.css'
 
 import { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import { Provider } from 'next-auth/client'
+import { SessionProvider } from 'next-auth/react'
 import NextHeadSeo from 'next-head-seo'
 import * as React from 'react'
 
@@ -28,7 +28,7 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
   }, [router.events])
 
   return (
-    <Provider session={pageProps.session}>
+    <SessionProvider session={pageProps.session}>
       <head>
         <NextHeadSeo
           title="casaub0n blog"
@@ -39,9 +39,8 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
           }}
         />
       </head>
-      {/* <GlobalStyles /> */}
       <Component {...pageProps} />
-    </Provider>
+    </SessionProvider>
   )
 }
 

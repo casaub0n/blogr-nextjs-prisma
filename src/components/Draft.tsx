@@ -1,4 +1,4 @@
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -33,7 +33,7 @@ const Component: React.VFC<Props> = ({ className, children, login }) => {
 export const StyledComponent = styled(Component)``
 
 const Container: React.VFC<ContainerProps> = ({ drafts }) => {
-  const [session] = useSession()
+  const { data: session } = useSession()
 
   return (
     <Layout>

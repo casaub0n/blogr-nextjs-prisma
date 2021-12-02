@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { signOut, useSession } from 'next-auth/client'
+import { signOut, useSession } from 'next-auth/react'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -103,8 +103,9 @@ export const StyledComponent = styled(Component)`
 `
 
 export const Container: React.VFC = () => {
-  const [session, loading] = useSession()
-
+  // https://next-auth.js.org/getting-started/client
+  const { data: session, status } = useSession()
+  const loading = status === 'loading'
   const user={email: session?.user?.email, name: session?.user?.name}
   const router = useRouter()
   const isActive = (pathname: string) => router.pathname === pathname
