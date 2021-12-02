@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/react'
 import * as React from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
@@ -69,7 +69,8 @@ type ContainerProps = {
 }
 
 export const Container: React.VFC<ContainerProps> = (props) => {
-  const [session, loading] = useSession()
+  const {data: session, status } = useSession()
+  const loading = status === 'loading'
   const userHasValidSession = Boolean(session)
   const { post } = props
   const postBelongsToUser = session?.user?.email === post.author?.email
