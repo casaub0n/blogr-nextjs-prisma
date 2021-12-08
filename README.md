@@ -15,6 +15,7 @@ https://casaub0n.github.io/blogr-nextjs-prisma/
 - storybook
 - eslint
 - prettier
+- next-auth
 
 ## How to implement
 ```typescript
