@@ -33,44 +33,44 @@ model User {
   image String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  account Account[]
+  accounts Account[]
   session Session[]
   posts Post[]
 }
 
 model Account {
-  id String @default(cuid()) @id
-  userId String
-  providerType String
-  providerId String
-  providerAccountId Int
-  refreshToken String?
-  accessToken String?
-  accessTokenExpires DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  user User @relation(fields: [userId], references: [id])
-  @@unique([providerId, providerAccountId])
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }
 
 model Session {
-  id String @id @default(cuid())
-  userId String
-  expires DateTime
-  sessionToken String @unique
-  accessToken String @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  user User @relation(fields: [userId], references: [id])
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationRequest {
-  id String @id @default(cuid())
   identifier String
-  token String @unique
-  expires DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  token      String   @unique
+  expires    DateTime
 
   @@unique([identifier, token])
 }
