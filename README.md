@@ -8,7 +8,6 @@ https://casaub0n.github.io/blogr-nextjs-prisma/
 
 ## Stack
 - Taildwind css
-- Google analytics
 - Typescript
 - Prisma
 - Jest
