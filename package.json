@@ -76,7 +76,7 @@
     "react-markdown": "7.1.1",
     "react-syntax-highlighter": "15.4.5",
     "styled-components": "5.3.3",
-    "swr": "1.1.0",
+    "swr": "1.1.1",
     "tailwindcss": "2.2.19",
     "video.js": "7.17.0",
     "videojs-youtube": "2.6.1",
