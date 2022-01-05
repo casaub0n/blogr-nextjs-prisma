@@ -14,7 +14,7 @@ const Template: Story<Props> = args => <Component {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  labelText: "What type of event is it?",
+  lmessage: "What type of event is it?",
   children: (
     <>
       <option>Corporate event</option>
@@ -27,7 +27,7 @@ Default.args = {
 
 export const Error = Template.bind({})
 Error.args = {
-  labelText: "What type of event is it?",
+  lmessage: "What type of event is it?",
   children: (
     <>
       <option>Corporate event</option>

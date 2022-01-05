@@ -21,18 +21,18 @@ export const Default = Template.bind({})
 Default.args = {
   children: (
     <>
-      <Input type="text" labelText="Full name" />
-      <Input type="email" labelText="Email address" />
-      <Input type="date" labelText="When is your event?" />
-      <Select labelText="What type of event is it?">
+      <Input type="text" lmessage="Full name" />
+      <Input type="email" lmessage="Email address" />
+      <Input type="date" lmessage="When is your event?" />
+      <Select lmessage="What type of event is it?">
         <option>Corporate event</option>
         <option>Wedding</option>
         <option>Birthday</option>
         <option>Other</option>
       </Select>
-      <TextArea labelText="Additional details" rows={3} />
+      <TextArea lmessage="Additional details" rows={3} />
       <CheckBox message="Email me news and special offers" checked />
-      <SimpleButton message="OK" />
+      <SimpleButton>Submit</SimpleButton>
     </>
   )
 }
@@ -41,18 +41,18 @@ export const Error = Template.bind({})
 Error.args = {
   children: (
     <>
-      <Input type="text" labelText="Full name" error="required" />
-      <Input type="email" labelText="Email address" />
-      <Input type="date" labelText="When is your event?" />
-      <Select labelText="What type of event is it?">
+      <Input type="text" lmessage="Full name" error="required" />
+      <Input type="email" lmessage="Email address" />
+      <Input type="date" lmessage="When is your event?" />
+      <Select lmessage="What type of event is it?">
         <option>Corporate event</option>
         <option>Wedding</option>
         <option>Birthday</option>
         <option>Other</option>
       </Select>
-      <TextArea labelText="Additional details" rows={3} />
+      <TextArea lmessage="Additional details" rows={3} />
       <CheckBox message="Email me news and special offers" checked />
-      <SimpleButton message="OK" />
+      <SimpleButton>Submit</SimpleButton>
     </>
   )
 }

@@ -3,6 +3,7 @@ import * as React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as z from 'zod'
 
+import { SimpleButton } from './atoms/SimpleButton'
 import { CheckBox } from './atoms/SimpleCheckBox'
 import { SimpleForm } from './atoms/SimpleForm'
 import { Input } from './atoms/SimpleInput'
@@ -34,17 +35,18 @@ export const Container: React.VFC = () => {
 
   return (
     <SimpleForm onSubmit={handleSubmit(onSubmit)}>
-      <Input type="text" labelText="Full name" {...register("name")} error={errors.name?.message} />
-      <Input type="email" labelText="Email Address" {...register("email")} error={errors.email?.message} />
-      <Input type="date" labelText="When is your event?" {...register("date")} error={errors.date?.message} />
-      <Select labelText="What type of event is it?" {...register("event")}>
+      <Input type="text" lmessage="Full name" {...register("name")} error={errors.name?.message} placeholder='Takashi Yoshida'/>
+      <Input type="email" lmessage="Email Address" {...register("email")} error={errors.email?.message} />
+      <Input type="date" lmessage="When is your event?" {...register("date")} error={errors.date?.message} />
+      <Select lmessage="What type of event is it?" {...register("event")}>
         <option>Corporate event</option>
         <option>Wedding</option>
         <option>Birthday</option>
         <option>Other</option>
       </Select>
-      <TextArea labelText="Additional details" rows={3} {...register("detail")} error={errors.detail?.message} />
+      <TextArea lmessage="Additional details" rows={3} {...register("detail")} error={errors.detail?.message} />
       <CheckBox message="Email me news and special offers" checked {...register("email")} />
+      <SimpleButton type="submit">Submit</SimpleButton>
     </SimpleForm>
   )
 }
