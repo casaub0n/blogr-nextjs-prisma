@@ -14,13 +14,13 @@ const Template: Story<Props> = args => <Component {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  labelText: "Full name",
+  lmessage: "Full name",
   type: "text"
 }
 
 export const Error = Template.bind({})
 Error.args = {
-  labelText: "Full name",
+  lmessage: "Full name",
   type: "text",
   error: "Please put in here"
 }
