@@ -33,7 +33,7 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
         <NextHeadSeo
           title="casaub0n blog"
           description="This is casaub0n blog."
-          canonical="https://casaub0n.dev"
+          canonical="https://www.casaub0n.dev"
           og={{
             title: "casaub0n blog"
           }}
