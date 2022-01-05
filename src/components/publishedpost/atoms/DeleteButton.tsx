@@ -30,7 +30,7 @@ export const StyledComponent = styled(Component)`
  * @param id of post
  */
 const deletePost = async (id: string): Promise<void> => {
-  await fetch(`http://localhost:3000/api/post/${id}`, {
+  await fetch(`${process.env.API}/api/post/${id}`, {
     method: 'DELETE'
   })
   Router.push('/')

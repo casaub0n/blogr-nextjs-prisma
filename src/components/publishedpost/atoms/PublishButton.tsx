@@ -30,7 +30,7 @@ export const StyledComponent = styled(Component)`
  * @param id of post
  */
 const publishPost = async (id: string): Promise<void> => {
-  await fetch(`http://localhost:3000/api/publish/${id}`, {
+  await fetch(`${process.env.API}/api/publish/${id}`, {
     method: 'PUT',
   })
   await Router.push('/')
