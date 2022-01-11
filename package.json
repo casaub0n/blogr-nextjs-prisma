@@ -65,7 +65,7 @@
     "next": "12.0.7",
     "next-auth": "4.1.0",
     "next-head-seo": "0.1.3",
-    "next-i18next": "10.1.0",
+    "next-i18next": "10.2.0",
     "pino": "7.6.3",
     "pino-logflare": "0.3.12",
     "postcss": "8.4.5",
