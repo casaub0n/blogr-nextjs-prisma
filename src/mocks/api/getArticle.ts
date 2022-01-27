@@ -14,10 +14,10 @@ type PostProps = {
   published?: string // Yabai
 }
 
-const get: ResponseResolver<MockedRequest, typeof restContext> = ( _req, res, ctx ) => {
+const get: ResponseResolver<MockedRequest, typeof restContext> = (_req, res, ctx) => {
   return res(
     ctx.status(200),
-    ctx.json<[PostProps]>([
+    ctx.json([
       {
         id: '1',
         title: 'New article',
@@ -26,8 +26,18 @@ const get: ResponseResolver<MockedRequest, typeof restContext> = ( _req, res, ct
           email: 'jimmy@example.com'
         },
         content: 'This is new an article.',
-        published: 'false'
-      }
+        published: 'true'
+      },
+      {
+        id: '2',
+        title: 'Second article',
+        author: {
+          name: 'Jimmy',
+          email: 'jimmy@example.com'
+        },
+        content: 'This is second article.',
+        published: 'true'
+      },
     ])
   )
 }
