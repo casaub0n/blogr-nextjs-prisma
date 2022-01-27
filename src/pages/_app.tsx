@@ -1,6 +1,7 @@
 import '../../styles/index.css'
 
 import { AppProps } from 'next/app'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { SessionProvider } from 'next-auth/react'
 import NextHeadSeo from 'next-head-seo'
@@ -29,7 +30,7 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <SessionProvider session={pageProps.session}>
-      <head>
+      <Head>
         <NextHeadSeo
           title="casaub0n blog"
           description="This is casaub0n blog."
@@ -38,7 +39,7 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
             title: "casaub0n blog"
           }}
         />
-      </head>
+      </Head>
       <Component {...pageProps} />
     </SessionProvider>
   )
