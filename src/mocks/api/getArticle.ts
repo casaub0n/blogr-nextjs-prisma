@@ -3,16 +3,16 @@ import { MockedRequest, ResponseResolver, restContext } from 'msw'
 // https://zenn.dev/azukiazusa/articles/using-msw-to-mock-frontend-tests
 // TODO: get article. follow on PostProps
 
-type PostProps = {
-  id: string
-  title?: string
-  author?: {
-    name: string
-    email: string
-  } | null
-  content?: string
-  published?: string // Yabai
-}
+// type PostProps = {
+//   id: string
+//   title?: string
+//   author?: {
+//     name: string
+//     email: string
+//   } | null
+//   content?: string
+//   published?: string // Yabai
+// }
 
 const get: ResponseResolver<MockedRequest, typeof restContext> = (_req, res, ctx) => {
   return res(
