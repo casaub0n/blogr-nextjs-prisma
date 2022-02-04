@@ -14823,10 +14823,10 @@ nested-object-assign@^1.0.3:
   resolved "https://registry.yarnpkg.com/nested-object-assign/-/nested-object-assign-1.0.4.tgz#c9db56078eb6043960fdb6ba918a5122a06ccac4"
   integrity sha512-FlZ7oN9ICt+fbcJ4ag2IsALIcalfE/E16ttdSA8peBiHJI+oEKdOcafqDnUbeUe5NwWGn/m9zZGO9qrAGzfesg==
 
-next-auth@4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-4.2.0.tgz#457573eef46aaf3094b3ed31b0e6ff89afe2fac4"
-  integrity sha512-eLuvxgqvH3g7QW2it766lGOx/ddFxUl/V7bGlbrxG0vrEzbLctE4x4pLeJUvDmuO6Dkp4hnP9IurqjNmJYAbcg==
+next-auth@4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-4.2.1.tgz#042e4858d9f67b4f702d3a55bae0d2f04db3cac3"
+  integrity sha512-XDtt7nqevkNf4EJ2zKAKkI+MFsURf11kx11vPwxrBYA1MHeqWwaWbGOUOI2ekNTvfAg4nTEJJUH3LV2cLrH3Tg==
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@panva/hkdf" "^1.0.1"
