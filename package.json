@@ -59,7 +59,7 @@
     "@prisma/client": "3.9.2",
     "@tailwindcss/forms": "0.4.0",
     "autoprefixer": "10.4.2",
-    "axios": "0.25.0",
+    "axios": "0.26.0",
     "clsx": "1.1.1",
     "isomorphic-unfetch": "3.1.0",
     "msw": "0.36.8",
