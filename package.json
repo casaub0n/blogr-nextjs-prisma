@@ -102,7 +102,7 @@
     "@tailwindcssinjs/macro": "0.17.0",
     "@testing-library/react": "12.1.5",
     "@types/jest": "27.4.1",
-    "@types/node": "16.11.26",
+    "@types/node": "16.11.27",
     "@types/react": "17.0.44",
     "@types/react-dom": "17.0.15",
     "@types/styled-components": "5.1.25",
