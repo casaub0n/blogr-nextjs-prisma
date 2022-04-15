@@ -139,7 +139,7 @@
     "prettier": "2.6.2",
     "prisma": "3.12.0",
     "react-docgen-typescript-loader": "3.7.2",
-    "stylelint": "14.6.1",
+    "stylelint": "14.7.0",
     "textlint": "12.1.1",
     "ts-jest": "27.1.4",
     "typescript": "4.6.3",
