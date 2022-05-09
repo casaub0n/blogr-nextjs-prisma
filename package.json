@@ -124,7 +124,7 @@
     "gh-pages": "3.2.3",
     "git-cz": "4.8.0",
     "global-jsdom": "8.4.0",
-    "husky": "8.0.0",
+    "husky": "8.0.1",
     "hygen": "6.2.0",
     "jest": "27.5.1",
     "jest-dom": "4.0.0",
