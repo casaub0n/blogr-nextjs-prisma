@@ -9,7 +9,7 @@ export type PlayerProps = {
 
 const Player: React.FC<PlayerProps> = ({videoJsOptions}) => {
   const [videoEl, setVideoEl] = React.useState(null)
-  const onVideo = React.useCallback((el) => {
+  const onVideo = React.useCallback((el: null): void => {
     setVideoEl(el)
   }, [])
 
