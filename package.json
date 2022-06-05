@@ -125,7 +125,7 @@
     "git-cz": "4.9.0",
     "global-jsdom": "8.4.0",
     "husky": "8.0.1",
-    "hygen": "6.2.4",
+    "hygen": "6.2.6",
     "jest": "27.5.1",
     "jest-dom": "4.0.0",
     "jest-watch-typeahead": "1.1.0",
