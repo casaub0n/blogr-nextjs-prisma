@@ -65,6 +65,10 @@ object-assign
 
 /*! @name pkcs7 @version 1.0.4 @license Apache-2.0 */
 
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+
 /**
  * @license React
  * react-dom.production.min.js
@@ -113,13 +117,6 @@ object-assign
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * @videojs/http-streaming
- * @version 1.13.2
- * @copyright 2020 Brightcove, Inc
- * @license Apache-2.0
  */
 
 /** @license React v16.13.1
