@@ -11,5 +11,5 @@ const Template: Story<Props> = args => <Component {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  src: 'https://images.dog.ceo/breeds/shiba/shiba-8.jpg'
+  className: 'dogname'
 }

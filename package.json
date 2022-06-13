@@ -34,6 +34,9 @@
   "prisma": {
     "schema": "src/prisma/schema.prisma"
   },
+  "resolutions": {
+    "webpack": "^5"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -94,6 +97,8 @@
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/addon-storyshots": "6.5.8",
     "@storybook/addons": "6.5.8",
+    "@storybook/builder-webpack5": "^6.5.8",
+    "@storybook/manager-webpack5": "^6.5.8",
     "@storybook/preset-typescript": "3.0.0",
     "@storybook/react": "6.5.8",
     "@storybook/storybook-deployer": "2.8.11",
@@ -135,16 +140,19 @@
     "postcss-cli": "9.1.0",
     "postcss-focus": "5.0.1",
     "postcss-import": "14.1.0",
+    "postcss-loader": "^7.0.0",
     "postcss-nested": "5.0.6",
     "postcss-preset-env": "7.7.1",
     "prettier": "2.6.2",
     "prisma": "3.15.1",
     "react-docgen-typescript-loader": "3.7.2",
+    "storybook-addon-next": "^1.6.6",
     "stylelint": "14.9.1",
     "textlint": "12.1.1",
     "ts-jest": "28.0.4",
     "typescript": "4.7.3",
-    "vercel": "25.1.0"
+    "vercel": "25.1.0",
+    "webpack": "^5.73.0"
   },
   "license": "MIT"
 }

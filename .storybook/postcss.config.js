@@ -1,18 +1,31 @@
 
-const postcssConfig = require('../postcss.config')
-const usePlugins = {}
+// const postcssConfig = require('../postcss.config')
+// const usePlugins = {}
 
-// NOTE: Using Next.js postcss config
-// Convert a plugins format for postcss-loader.
-postcssConfig.plugins.forEach((plugin) => {
-  // Has options?
-  if (Array.isArray(plugin) && plugin.length === 2) {
-    usePlugins[plugin[0]] = plugin[1]
-  } else {
-    usePlugins[plugin] = {}
-  }
-})
+// // NOTE: Using Next.js postcss config
+// // Convert a plugins format for postcss-loader.
+// postcssConfig.plugins.forEach((plugin) => {
+//   // Has options?
+//   if (Array.isArray(plugin) && plugin.length === 2) {
+//     usePlugins[plugin[0]] = plugin[1]
+//   } else {
+//     usePlugins[plugin] = {}
+//   }
+// })
+
+// module.exports = {
+//   plugins: usePlugins,
+// }
 
 module.exports = {
-  plugins: usePlugins,
-}
+  plugins: [
+    [
+      // tailwindcss: {},
+      // autoprefixer: {},
+      // // ["postcss-short", { prefix: "x" }],
+      "postcss-preset-env",
+      "tailwindcss",
+      "autoprefixer"
+    ],
+  ],
+};

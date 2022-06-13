@@ -4,19 +4,12 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Post from '../components/Post'
-import prisma from '../lib/prisma'
 import { PostProps } from '../lib/types/PostProps'
+import { getPublishedPost } from '../services/posts'
 
 export const getStaticProps: GetServerSideProps = async () => {
-  const feed = await prisma.post.findMany({
-    where: { published: true },
-    include: {
-      author: {
-        select: { name: true },
-      },
-    },
-  })
-  return { props: { feed } }
+  // const propsObject = await getPublishedPost()
+  return { props: await getPublishedPost() }
 }
 
 type ContainerProps = {
@@ -27,7 +20,7 @@ type Props = {
   className: string
 } & ContainerProps
 
-const Component: React.VFC<Props> = ({...props}) =>
+const Component: React.FC<Props> = ({...props}) =>
   (
     <Layout>
       <div className="page">

@@ -8,6 +8,7 @@ const purgecss = [
 
 const postcssConfig = {
   plugins: {
+    'postcss-preset-env': {},
     'tailwindcss': {},
     'autoprefixer': {
       ...(process.env.NODE_ENV === "production" ? [purgecss] : [])
