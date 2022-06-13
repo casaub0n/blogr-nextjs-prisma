@@ -6,5 +6,9 @@
       "automerge": true
     }
   ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 5pm on wednesday"]
+  },
   "extends": ["config:base"]
 }
