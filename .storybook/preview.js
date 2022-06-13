@@ -1,11 +1,16 @@
 import '../styles/index.css'
 import router from './newRouterMock'
-import * as nextImage from 'next/image'
+import * as NextImage from 'next/image'
 
-Object.defineProperty(nextImage, 'default', {
+const OriginalNextImage = NextImage.default;
+
+Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: props => <img {...props} />
+  value: props => <OriginalNextImage {...props} unoptimized />,
 });
+
+// const NextImage = props => <Image unoptimized {...props} />
+// export default NextImage;
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
