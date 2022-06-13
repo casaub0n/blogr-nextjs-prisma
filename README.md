@@ -3,6 +3,8 @@
 
 This is the minimum CMS is based on [How to Build a Fullstack App with Next.js, Prisma, and PostgreSQL](https://vercel.com/guides/nextjs-prisma-postgres)
 
+The best DX actual next.js project
+
 ## Compoenet catalog
 https://casaub0n.github.io/blogr-nextjs-prisma/
 
@@ -11,7 +13,7 @@ https://casaub0n.github.io/blogr-nextjs-prisma/
 - Typescript
 - Prisma
 - Jest
-- storybook
+- Storybook
 - eslint
 - prettier
 - next-auth
