@@ -12,6 +12,10 @@ const storybookMainConfig = {
       },
     },
   ],
+  webpackFinal: async (config) => {
+    config.resolve.alias["next/image"] = require.resolve("./NextImage.js");
+    return config
+  }
 }
 
 module.exports = storybookMainConfig

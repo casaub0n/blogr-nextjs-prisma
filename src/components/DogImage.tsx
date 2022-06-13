@@ -18,7 +18,7 @@ const Component: React.VFC<IProps> = props => {
         'mb-8 px-3'
       )}>
         <div className={clsx('overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition')}>
-          <Image className={clsx('dogimage w-full')} src={props.src} alt="cute dog!" />
+          <Image className={clsx('dogimage w-full')} src={props.src} alt="cute dog!" width='512' height='341' />
             <div className={clsx('p-6 flex flex-col justify-between')}>
               <h3 className={clsx('font-medium text-gray-900 mb-4 leading-normal')}>Awesome Shiba dooog!!!</h3>
               <p className={clsx('inline-flex items-center')}>

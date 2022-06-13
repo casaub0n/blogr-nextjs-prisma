@@ -4,4 +4,7 @@ module.exports = {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
+  // images: {
+  //   domain: ['images.dog.ceo']
+  // }
 }
