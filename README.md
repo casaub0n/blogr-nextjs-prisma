@@ -9,7 +9,7 @@ The best DX actual next.js project
 https://casaub0n.github.io/blogr-nextjs-prisma/
 
 ## Stack
-- Taildwind css
+- Tailwind CSS
 - Typescript
 - Prisma
 - Jest
@@ -17,6 +17,26 @@ https://casaub0n.github.io/blogr-nextjs-prisma/
 - eslint
 - prettier
 - next-auth
+
+### Tailwind CSS
+The default theme is [nord theme](https://www.nordtheme.com/). You can change to edit on `tailwind.config.js`.
+
+### Prisma
+Prisma has a strong type system and a frendly editor.
+#### TODO
+- [ ] WIP service layer
+- [ ] integration test
+
+### Jest
+Because of unit test. The environment is under jsdom.
+#### TODO
+- [ ] MSW
+
+### Storybook
+This project's storybook is still webpack4 because of dependency of PostCSS.
+Right now, preview.js is not good work, so it extends webpack configuration.
+
+### GitHub actions
 
 ## How to implement
 ```typescript
