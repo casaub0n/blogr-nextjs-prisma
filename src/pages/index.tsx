@@ -8,7 +8,7 @@ import { PostProps } from '../lib/types/PostProps'
 import { getPublishedPost } from '../services/posts'
 
 export const getStaticProps: GetServerSideProps = async () => {
-  return { props: await getPublishedPost }
+  return { props: await getPublishedPost() }
 }
 
 type ContainerProps = {
