@@ -9,7 +9,7 @@ type Props = {
   href: string
 } & JSX.IntrinsicElements['a']
 
-const Component: React.VFC<Props> = ({children, className, clickEvent, href, ...props}) => {
+const Component: React.FC<Props> = ({children, className, clickEvent, href, ...props}) => {
   return (
     <a className={className} href={href} onClick={clickEvent} {...props}>
       {children}
@@ -21,7 +21,7 @@ export const StyledComponent = styled(Component)`
   margin-left: 1rem;
 `
 
-const Container: React.VFC = () => {
+const Container: React.FC = () => {
   const clickEvent = () => Router.push('/')
 
   return (
