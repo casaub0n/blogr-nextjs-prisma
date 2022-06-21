@@ -1,32 +1,19 @@
 import * as React from 'react'
-import styled from 'styled-components'
 
 import { Header } from './header'
+import { LayoutSection } from './LayoutSection'
 
-type IProps = {
+type Props = {
   children?: React.ReactNode
-  // className?: string
 }
 
-const Component: React.VFC<IProps> = ({ children }) => (
+const Component: React.FC<Props> = ({ children }) => (
   <>
     <Header />
-    {/* container */}
-    <section className="container w-full md:max-x-3xl mx-auto pt-50">
+    <LayoutSection>
       {children}
-    </section>
-    {/* /container */}
+    </LayoutSection>
   </>
 )
 
-export const StyledComponent = styled(Component)``
-
-const Container: React.VFC<IProps> = ({ children }) => {
-  return (
-    <StyledComponent>
-      {children}
-    </StyledComponent>
-  )
-}
-
-export default Container
+export {Component as Layout}
