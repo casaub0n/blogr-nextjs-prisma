@@ -1,8 +1,10 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import Router from 'next/router'
 import * as React from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import styled from 'styled-components'
+import * as z from 'zod'
 
-import Layout from '../Layout'
 import Back from './atoms/Back'
 import { ContentArea } from './atoms/ContentArea'
 import { SubmitButton } from './atoms/SubmitButton'
@@ -11,13 +13,12 @@ import { TitleInput } from './atoms/TitleInput'
 type Props = {
   className: string
   children: React.ReactNode
-  submitData: (e: React.SyntheticEvent) => void
-}
+} & JSX.IntrinsicElements['form']
 
-const Component: React.FC<Props> = ({ className, submitData, children }) => {
+const Component: React.FC<Props> = ({ className, children, ...props }) => {
   return (
     <div className={className}>
-      <form onSubmit={submitData}>
+      <form {...props}>
         <h1>New Draft</h1>
         {children}
       </form>
@@ -26,26 +27,30 @@ const Component: React.FC<Props> = ({ className, submitData, children }) => {
 }
 
 export const StyledComponent = styled(Component)`
-  background: white;
+  background: var(--geist-background);
   padding: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 `
 
+export const schema = z.object({
+  title: z.string(),
+  content: z.string()
+})
+
+export type FormName = z.infer<typeof schema>
+
 const Container: React.FC = () => {
-  const [title, setTitle] = React.useState('')
-  const titleEvent = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    return setTitle(e.target.value)
-  }
+  const { register, handleSubmit, getValues } = useForm<FormName>({
+    mode: 'onChange',
+    resolver: zodResolver(schema)
+  })
 
-  const [content, setContent] = React.useState('')
-  const contentEvent = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    return setContent(e.target.value)
-  }
+  const title = getValues('title')
+  const content = getValues('content')
 
-  const submitData = async (e: React.SyntheticEvent) => {
-    e.preventDefault()
+  const onSubmit: SubmitHandler<FormName> = async () => {
     try {
       const body = { title, content }
       await fetch('/api/post', {
@@ -54,20 +59,18 @@ const Container: React.FC = () => {
         body: JSON.stringify(body),
       })
       await Router.push('/drafts')
-    } catch (error) {
-      console.error(error)
+    } catch (err) {
+      console.error(err)
     }
   }
 
   return (
-    <Layout>
-      <StyledComponent className="page" submitData={submitData}>
-        <TitleInput title={title} titleEvent={titleEvent} />
-        <ContentArea content={content} contentEvent={contentEvent} />
-        <SubmitButton content={content} title={title} />
-        <Back />
-      </StyledComponent>
-    </Layout>
+    <StyledComponent className="page" onSubmit={handleSubmit(onSubmit)}>
+      <TitleInput {...register('title')} />
+      <ContentArea {...register('content')} />
+      <SubmitButton content={content} title={title} />
+      <Back />
+    </StyledComponent>
   )
 }
 

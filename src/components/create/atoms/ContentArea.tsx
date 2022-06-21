@@ -3,12 +3,9 @@ import styled from 'styled-components'
 
 type Props = {
   className: string
-} & JSX.IntrinsicElements['textarea']
+} & ContainerProps
 
-type ContainerProps = {
-  content: string
-  contentEvent: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
-}
+type ContainerProps = JSX.IntrinsicElements['textarea']
 
 const Component: React.FC<Props> = ({ className }) => {
   return (
@@ -17,18 +14,16 @@ const Component: React.FC<Props> = ({ className }) => {
 }
 
 export const StyledComponent = styled(Component)`
-  textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-    border-radius: 0.25rem;
-    border: 0.125rem solid rgba(0, 0, 0, 0.2);
-  }
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  border: 0.125rem solid rgba(0, 0, 0, 0.2);
 `
 
-const Container: React.FC<ContainerProps> = ({ content, contentEvent }) => {
+const Container: React.FC<ContainerProps> = () => {
   return (
-    <StyledComponent className="content" value={content} onChange={contentEvent} />
+    <StyledComponent className="content" />
   )
 }
 

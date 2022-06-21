@@ -17,13 +17,12 @@ const Component: React.FC<Props> = ({ className }) => {
 }
 
 export const StyledComponent = styled(Component)`
-  input[type='submit'] {
-    background: #ececec;
-    border: 0;
-    padding: 1rem 2rem;
-  }
+  background: #ececec;
+  border: 0;
+  padding: 1rem 2rem;
 `
 
+// TODO: disable
 const Container: React.FC<ContainerProps> = ({ content, title }) => {
   return (
     <StyledComponent className="submit_button" disabled={!content || !title} />
