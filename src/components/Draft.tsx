@@ -3,7 +3,6 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import { PostProps } from '../lib/types/PostProps'
-import Layout from './Layout'
 import Post from './Post'
 
 type Props = {
@@ -16,7 +15,7 @@ type ContainerProps = {
   drafts: PostProps[]
 }
 
-const Component: React.VFC<Props> = ({ className, children, login }) => {
+const Component: React.FC<Props> = ({ className, children, login }) => {
   return (
     <div className={className}>
       <h1>My Drafts</h1>
@@ -36,15 +35,13 @@ const Container: React.VFC<ContainerProps> = ({ drafts }) => {
   const { data: session } = useSession()
 
   return (
-    <Layout>
-      <StyledComponent className="page" login={Boolean(session)}>
-        {drafts.map((post) => (
-          <div key={post.id} className="post">
-            <Post {...post} />
-          </div>
-        ))}
-      </StyledComponent>
-    </Layout>
+    <StyledComponent className="page" login={Boolean(session)}>
+      {drafts.map((post) => (
+        <div key={post.id} className="post">
+          <Post {...post} />
+        </div>
+      ))}
+    </StyledComponent>
   )
 }
 

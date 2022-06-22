@@ -1,10 +1,13 @@
+import { Meta, Story } from '@storybook/react'
 import React, { ComponentProps } from 'react'
 
-import { StyledComponent as Component } from './Layout'
+import { LayoutSection } from './LayoutSection'
 import { StyledComponent as Post } from './Post'
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { title: 'LayOut' }
+export default {
+  title: 'Layout',
+  component: LayoutSection,
+} as Meta
 
 type PostProps = ComponentProps<typeof Post>
 
@@ -20,13 +23,6 @@ const post: PostProps = {
   className: 'storyPost'
 }
 
-const MetaPost: React.VFC = () => <Post {...post} />
+const Template: Story = () => <LayoutSection><Post {...post} /></LayoutSection>
 
-type Props = ComponentProps<typeof Component>
-
-const meta: Props = {
-  children: MetaPost,
-  className: 'layout',
-}
-
-export const Layout:React.VFC = () => <Component {...meta} />
+export const Default = Template.bind({})

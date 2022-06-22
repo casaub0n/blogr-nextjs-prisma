@@ -2,10 +2,9 @@ import clsx from 'clsx'
 import { useSession } from 'next-auth/react'
 import * as React from 'react'
 import ReactMarkdown from 'react-markdown'
-import styled from 'styled-components'
 
 import type { PostProps } from '../../lib/types/PostProps'
-import Layout from '../Layout'
+import { Layout } from '../Layout'
 import DeleteButton from './atoms/DeleteButton'
 import PublishButton from './atoms/PublishButton'
 
@@ -16,33 +15,31 @@ type Props = {
   postBelongsToUser: boolean
 } & PostProps
 
-const Component: React.VFC<Props> = ({ className, loading, userHasValidation, postBelongsToUser, published, title, author, content, id }) => {
+const Component: React.FC<Props> = ({ className, loading, userHasValidation, postBelongsToUser, published, title, author, content, id }) => {
   if (loading) {
     return <div className={className}>Authenticating ...</div>
   }
 
   return (
-    <Layout>
-      <div className={clsx('w-full px-4 md:px-6 text-xl text-gray-800 leading-normal')}>
-        <div className="font-sans">
-          <h2 className="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">{!published ? `${title} (Draft)` : title}</h2>
-        </div>
-        <small className="text-sm md:text-base font-normal text-gray-600">By {author?.name || "Unknown author"}</small>
-        {content ?
-          <ReactMarkdown>{content}</ReactMarkdown>
-        : undefined}
-        {!published && userHasValidation && postBelongsToUser && (
-          <PublishButton id={id} />
-        )}
-        {userHasValidation && postBelongsToUser && (
-          <DeleteButton id={id} />
-        )}
+    <div className={clsx(className, 'w-full px-4 md:px-6 text-xl text-gray-800 leading-normal')}>
+      <div className="font-sans">
+        <h2 className="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">{!published ? `${title} (Draft)` : title}</h2>
       </div>
-    </Layout>
+      <small className="text-sm md:text-base font-normal text-gray-600">By {author?.name || "Unknown author"}</small>
+      {content ?
+      <ReactMarkdown>{content}</ReactMarkdown>
+        : undefined}
+      {!published && userHasValidation && postBelongsToUser && (
+        <PublishButton id={id} />
+      )}
+      {userHasValidation && postBelongsToUser && (
+        <DeleteButton id={id} />
+      )}
+    </div>
   )
 }
 
-export const StyledComponent = styled(Component)`
+// CSS
   /* .page {
     background: white;
     padding: 2rem;
@@ -62,13 +59,12 @@ export const StyledComponent = styled(Component)`
   button + button {
     margin-left: 1rem;
   } */
-`
 
 type ContainerProps = {
   post: PostProps
 }
 
-export const Container: React.VFC<ContainerProps> = (props) => {
+export const Container: React.FC<ContainerProps> = (props) => {
   const {data: session, status } = useSession()
   const loading = status === 'loading'
   const userHasValidSession = Boolean(session)
@@ -76,7 +72,18 @@ export const Container: React.VFC<ContainerProps> = (props) => {
   const postBelongsToUser = session?.user?.email === post.author?.email
 
   return (
-    <StyledComponent className="page" loading={loading} userHasValidation={userHasValidSession} postBelongsToUser={postBelongsToUser} published={post.published} title={post.title} author={post.author} content={post.content} id={post.id} />
+    <Layout>
+      <Component
+        className="page"
+        loading={loading}
+        userHasValidation={userHasValidSession}
+        postBelongsToUser={postBelongsToUser}
+        published={post.published}
+        title={post.title}
+        author={post.author}
+        content={post.content}
+        id={post.id} />
+    </Layout>
   )
 }
 

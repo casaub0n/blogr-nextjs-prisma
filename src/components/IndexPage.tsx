@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import { PostProps } from '../lib/types/PostProps'
-import Layout from './Layout'
+import { Layout } from './Layout'
 import Post from './Post'
 
 type ContainerProps = {
@@ -13,21 +13,19 @@ type Props = {
   className: string
 } & ContainerProps
 
-export const Component: React.VFC<Props> = ({...props}) => {
+export const Component: React.VFC<Props> = ({className, ...props}) => {
   return (
-    <Layout>
-      <div className="page">
-        <h1>Public Feed</h1>
-        <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              {/* TODO */}
-              <Post id={post.id} title={post.title} author={post.author} content={post.content} published={post.published} />
-            </div>
-          ))}
-        </main>
-      </div>
-    </Layout>
+    <div className={className}>
+      <h1>Public Feed</h1>
+      <main>
+        {props.feed.map((post) => (
+          <div key={post.id} className="post">
+            {/* TODO */}
+            <Post id={post.id} title={post.title} author={post.author} content={post.content} published={post.published} />
+          </div>
+        ))}
+      </main>
+    </div>
   )
 }
 
@@ -49,5 +47,13 @@ export const StyledComponent = styled(Component)`
     margin-top: 2rem;
   }
 `
+
+export const Container: React.FC<ContainerProps> = ({...props}) => {
+  return (
+    <Layout>
+      <StyledComponent className='page' {...props} />
+    </Layout>
+  )
+}
 
 export { StyledComponent as IndexPage }
