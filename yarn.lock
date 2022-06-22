@@ -7077,7 +7077,7 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-duplexify@^4.1.1, duplexify@^4.1.2:
+duplexify@^4.1.1:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-4.1.2.tgz#18b4f8d28289132fa0b9573c898d9f903f81c7b0"
   integrity sha512-fz3OjcNCHmRP12MJoZMPglx8m4rrFP8rovnk4vT8Fs+aonZoCwGg10dSsQsfP/E62eZcPTMSMP6686fu9Qlqtw==
@@ -7931,7 +7931,7 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
 
-fast-redact@^3.0.0:
+fast-redact@^3.0.0, fast-redact@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/fast-redact/-/fast-redact-3.1.1.tgz#790fcff8f808c2e12fabbfb2be5cb2deda448fa0"
   integrity sha512-odVmjC8x8jNeMZ3C+rPMESzXVSEU8tSWSHv9HFxP2mm89G/1WwqhrerJDQm9Zus8X6aoRgQDThKqptdNA6bt+A==
@@ -12583,10 +12583,10 @@ oidc-token-hash@^5.0.1:
   resolved "https://registry.yarnpkg.com/oidc-token-hash/-/oidc-token-hash-5.0.1.tgz#ae6beec3ec20f0fd885e5400d175191d6e2f10c6"
   integrity sha512-EvoOtz6FIEBzE+9q253HsLCVRiK/0doEJ2HCvvqMQb3dHZrP3WlJKYtJ55CRTw4jmYomzH4wkPuCj/I3ZvpKxQ==
 
-on-exit-leak-free@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/on-exit-leak-free/-/on-exit-leak-free-1.0.0.tgz#4a2accb382278a266848bb1a21439e5fc3cd9881"
-  integrity sha512-Ve8ubhrXRdnuCJ5bQSQpP3uaV43K1PMcOfSRC1pqHgRZommXCgsXwh08jVC5NpjwScE23BPDwDvVg4cov3mwjw==
+on-exit-leak-free@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/on-exit-leak-free/-/on-exit-leak-free-2.1.0.tgz#5c703c968f7e7f851885f6459bf8a8a57edc9cc4"
+  integrity sha512-VuCaZZAjReZ3vUwgOB8LxAosIurDiAW0s13rI1YwmaP++jvcxP77AWoQvenZebpCA2m8WC1/EosPYPMjnRAp/w==
 
 on-finished@2.4.1:
   version "2.4.1"
@@ -13158,12 +13158,12 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha512-MnUuEycAemtSaeFSjXKW/aroV7akBbY+Sv+RkyqFjgAe73F+MR0TBWKBRDkmfWq/HiFmdavfZ1G7h4SPZXaCSg==
 
-pino-abstract-transport@v0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/pino-abstract-transport/-/pino-abstract-transport-0.5.0.tgz#4b54348d8f73713bfd14e3dc44228739aa13d9c0"
-  integrity sha512-+KAgmVeqXYbTtU2FScx1XS3kNyfZ5TrXY07V96QnUSFqo2gAqlvmaxH67Lj7SWazqsMabf+58ctdTcBgnOLUOQ==
+pino-abstract-transport@v1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/pino-abstract-transport/-/pino-abstract-transport-1.0.0.tgz#cc0d6955fffcadb91b7b49ef220a6cc111d48bb3"
+  integrity sha512-c7vo5OpW4wIS42hUVcT5REsL8ZljsUfBjqV/e2sFxmFEFZiq1XLUp5EYLtuDH6PEHq9W1egWqRbnLUP5FuZmOA==
   dependencies:
-    duplexify "^4.1.2"
+    readable-stream "^4.0.0"
     split2 "^4.0.0"
 
 pino-logflare@0.3.12:
@@ -13193,20 +13193,20 @@ pino-std-serializers@^5.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-5.6.0.tgz#31b141155d6520967c5ec72944d08fb45c490fd3"
   integrity sha512-VdUXCw8gO+xhir7sFuoYSjTnzB+TMDGxhAC/ph3YS3sdHnXNdsK0wMtADNUltfeGkn2KDxEM21fnjF3RwXyC8A==
 
-pino@8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-8.0.0.tgz#7918a19b647a8f281fe06a28043e99ade12dce46"
-  integrity sha512-EvZh9ZUoLGkrhqhoF9UBxw2/ZiAhXHUKlGrI4WUT/wLu0sfu8Wr3NJaZ6lxcy/S51W0PMSon5KE7ujPAhc/G6g==
+pino@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-8.1.0.tgz#6211c5e77d813624f6707ec4750f4fbf778d5621"
+  integrity sha512-53jlxs+02UNTtF1XwVWfa0dHipBiM5GK73XhkHn8M2hUl9y3L94dNwB8BwQhpd5WdHjBkyJiO7v0LRt4SGgsPg==
   dependencies:
     atomic-sleep "^1.0.0"
-    fast-redact "^3.0.0"
-    on-exit-leak-free "^1.0.0"
-    pino-abstract-transport v0.5.0
+    fast-redact "^3.1.1"
+    on-exit-leak-free "^2.1.0"
+    pino-abstract-transport v1.0.0
     pino-std-serializers "^5.0.0"
     process-warning "^2.0.0"
     quick-format-unescaped "^4.0.3"
     real-require "^0.1.0"
-    safe-stable-stringify "^2.1.0"
+    safe-stable-stringify "^2.3.1"
     sonic-boom "^3.0.0"
     thread-stream "^1.0.0"
 
@@ -14519,6 +14519,13 @@ read-pkg@^5.2.0:
     string_decoder "^1.1.1"
     util-deprecate "^1.0.1"
 
+readable-stream@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-4.0.0.tgz#da7105d03430a28ef4080785a43e6a45d4cdc4d1"
+  integrity sha512-Mf7ilWBP6AV3tF3MjtBrHMH3roso7wIrpgzCwt9ybvqiJQVWIEBMnp/W+S//yvYSsUUi2cJIwD7q7m57l0AqZw==
+  dependencies:
+    abort-controller "^3.0.0"
+
 readdirp@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
@@ -15026,7 +15033,7 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-safe-stable-stringify@^2.1.0:
+safe-stable-stringify@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.3.1.tgz#ab67cbe1fe7d40603ca641c5e765cb942d04fc73"
   integrity sha512-kYBSfT+troD9cDA85VDnHZ1rpHC50O0g1e6WlGHVCz/g+JS+9WKLj+XwFYyR8UbrZN8ll9HUpDAAddY58MGisg==
