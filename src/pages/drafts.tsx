@@ -3,6 +3,7 @@ import { getSession } from 'next-auth/react'
 import * as React from 'react'
 
 import Draft from '../components/Draft'
+import { Layout } from '../components/Layout'
 import prisma from '../lib/prisma'
 import { PostProps } from '../lib/types/PostProps'
 
@@ -37,7 +38,9 @@ type ContainerProps = {
 
 const Container: NextPage<ContainerProps> = (props) => {
   return (
-    <Draft {...props} />
+    <Layout>
+      <Draft {...props} />
+    </Layout>
   )
 }
 

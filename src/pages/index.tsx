@@ -2,7 +2,7 @@ import { GetServerSideProps, NextPage } from 'next'
 import * as React from 'react'
 import styled from 'styled-components'
 
-import Layout from '../components/Layout'
+import { Layout } from '../components/Layout'
 import Post from '../components/Post'
 import prisma from '../lib/prisma'
 import { PostProps } from '../lib/types/PostProps'
@@ -27,21 +27,19 @@ type Props = {
   className: string
 } & ContainerProps
 
-const Component: React.VFC<Props> = ({...props}) =>
+const Component: React.FC<Props> = ({...props}) =>
   (
-    <Layout>
-      <div className="page">
-        <h1>Public Feed</h1>
-        <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              {/* TODO */}
-              <Post id={post.id} title={post.title} author={post.author} content={post.content} published={post.published} />
-            </div>
-          ))}
-        </main>
-      </div>
-    </Layout>
+    <div className="page">
+      <h1>Public Feed</h1>
+      <main>
+        {props.feed.map((post) => (
+          <div key={post.id} className="post">
+            {/* TODO */}
+            <Post id={post.id} title={post.title} author={post.author} content={post.content} published={post.published} />
+          </div>
+        ))}
+      </main>
+    </div>
   )
 
 const StyledComponent = styled(Component)`
@@ -65,9 +63,9 @@ const StyledComponent = styled(Component)`
 
 const Container: NextPage<Props> = ({...props}) => {
   return (
-    <StyledComponent
-      {...props}
-    />
+    <Layout>
+      <StyledComponent {...props} />
+    </Layout>
   )
 }
 

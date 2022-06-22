@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
 
+import { LayoutSection } from '../LayoutSection'
 import { Create } from './index'
 
 export default {
@@ -9,7 +10,7 @@ export default {
 } as Meta
 
 // TODO: separete layout
-const Template: Story = () => <section className="container w-full md:max-x-3xl mx-auto pt-50"><Create /></section>
+const Template: Story = () => <LayoutSection><Create /></LayoutSection>
 
 export const Default = Template.bind({})
 Default.args = {}
