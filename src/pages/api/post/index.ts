@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { getSession } from 'next-auth/react'
 
-import prisma from '../../../lib/prisma'
+import { createPost } from '../../../services/posts'
 
 /**
  * POST /api/post
@@ -15,12 +15,7 @@ import prisma from '../../../lib/prisma'
 export default async function handle(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   const { title, content} = req.body
   const session = await getSession({ req })
-  const result = await prisma.post.create({
-    data: {
-      title: title,
-      content: content,
-      author: { connect: { email: session?.user?.email != null ? session?.user?.email : undefined } },
-    },
-  })
-  res.json(result)
+  const email = session?.user?.email
+  if (email !== null) res.json(await createPost(title, content, email))
+  console.error('session error')
 }

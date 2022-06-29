@@ -4,19 +4,11 @@ import styled from 'styled-components'
 
 import { Layout } from '../components/Layout'
 import Post from '../components/Post'
-import prisma from '../lib/prisma'
 import { PostProps } from '../lib/types/PostProps'
+import { getPublishedPost } from '../services/posts'
 
 export const getStaticProps: GetServerSideProps = async () => {
-  const feed = await prisma.post.findMany({
-    where: { published: true },
-    include: {
-      author: {
-        select: { name: true },
-      },
-    },
-  })
-  return { props: { feed } }
+  return { props: await getPublishedPost() }
 }
 
 type ContainerProps = {
