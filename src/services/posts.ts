@@ -11,3 +11,14 @@ export const getPublishedPost = async (): Promise<object> => {
   })
   return { feed }
 }
+
+export const createPost = async (title: string, content: string, email?: string): Promise<object> => {
+  const result = await prisma.post.create({
+    data: {
+      title: title,
+      content: content,
+      author: { connect: { email: email } },
+    },
+  })
+  return result
+}
