@@ -1,5 +1,4 @@
 import '../styles/index.css'
-import router from './newRouterMock'
 import * as NextImage from 'next/image'
 
 const OriginalNextImage = NextImage.default;
