@@ -9,8 +9,7 @@ Object.defineProperty(NextImage, 'default', {
   value: props => <OriginalNextImage {...props} unoptimized />,
 });
 
-// const NextImage = props => <Image unoptimized {...props} />
-// export default NextImage;
+import { RouterContext } from "next/dist/shared/lib/router-context";
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -23,5 +22,14 @@ export const parameters = {
       { name: 'white', value: '#FFFFFF' },
       { name: 'black', value: '#000000' },
     ],
+  },
+  nextRouter: {
+    path: "/",
+    asPath: "/",
+    query: {},
+    push(path) {
+      console.log(`router push to: ${path}`);
+    },
+    Provider: RouterContext.Provider,
   },
 }
