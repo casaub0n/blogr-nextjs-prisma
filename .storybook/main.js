@@ -11,7 +11,9 @@ const storybookMainConfig = {
         },
       },
     },
+    // 'storybook-addon-next-router'
   ],
+  framework: "@storybook/react",
   webpackFinal: async (config) => {
     config.resolve.alias["next/image"] = require.resolve("./NextImage.js");
     return config

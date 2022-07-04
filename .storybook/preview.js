@@ -1,5 +1,5 @@
 import '../styles/index.css'
-import router from './newRouterMock'
+// import router from './newRouterMock'
 import * as NextImage from 'next/image'
 
 const OriginalNextImage = NextImage.default;
@@ -24,4 +24,16 @@ export const parameters = {
       { name: 'black', value: '#000000' },
     ],
   },
+  // nextRouter: {
+  //   path: "/",
+  //   asPath: "/",
+  //   query: {},
+  //   push(path) {
+  //     console.log(`router push to: ${path}`);
+  //   },
+  //   Provider: RouterContext.Provider,
+  // },
+  // nextRouter: {
+  //   Provider: RouterContext.Provider,
+  // },
 }
