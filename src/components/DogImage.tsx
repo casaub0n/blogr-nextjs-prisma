@@ -8,7 +8,7 @@ export type IProps = {
   className?: string
 }
 
-const Component: React.VFC<IProps> = props => {
+const Component: React.FC<IProps> = props => {
   return (
     <div className={props.className}>
       <div className={clsx(
@@ -33,7 +33,7 @@ const Component: React.VFC<IProps> = props => {
 
 export const StyledComponent = styled(Component)``
 
-const Container: React.VFC<IProps> = props => {
+const Container: React.FC<IProps> = props => {
   return (
     <StyledComponent {...props} />
   )

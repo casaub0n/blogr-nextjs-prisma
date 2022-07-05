@@ -18,7 +18,7 @@ type ContainerProps = {
   dataActive?: string
 }
 
-const Component: React.VFC<Props> = ({className, to, dataActive, children}) => {
+const Component: React.FC<Props> = ({className, to, dataActive, children}) => {
   return (
     <a className={className} href={to} data-active={dataActive}>
       {children}

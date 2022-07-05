@@ -36,7 +36,7 @@ const deletePost = async (id: string): Promise<void> => {
   Router.push('/')
 }
 
-const Container: React.VFC<ContainerProps> = ({ id }) => {
+const Container: React.FC<ContainerProps> = ({ id }) => {
   return (
     <StyledComponent className="delete_button" handleClickEvent={deletePost} id={id} />
   )

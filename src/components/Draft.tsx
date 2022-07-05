@@ -31,7 +31,7 @@ const Component: React.FC<Props> = ({ className, children, login }) => {
 
 export const StyledComponent = styled(Component)``
 
-const Container: React.VFC<ContainerProps> = ({ drafts }) => {
+const Container: React.FC<ContainerProps> = ({ drafts }) => {
   const { data: session } = useSession()
 
   return (
