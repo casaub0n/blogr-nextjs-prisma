@@ -9,7 +9,7 @@ type Props = {
   className: string
 } & ContainerProps
 
-const Component: React.VFC<Props> = ({className, children}) => {
+const Component: React.FC<Props> = ({className, children}) => {
   return (
     <div className={className}>
       {children}
@@ -33,7 +33,7 @@ export const StyledComponent = styled(Component)`
   }
 `
 
-const Container: React.VFC<ContainerProps> = ({children}) => {
+const Container: React.FC<ContainerProps> = ({children}) => {
   return <StyledComponent className="left">{children}</StyledComponent>
 }
 

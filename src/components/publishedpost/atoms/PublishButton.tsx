@@ -12,7 +12,7 @@ type Props = {
   handleClickEvent: (id: string) => Promise<void>
 } & ContainerProps
 
-const Component: React.VFC<Props> = ({className, id, handleClickEvent}) => {
+const Component: React.FC<Props> = ({className, id, handleClickEvent}) => {
   return (
     <button className={className} onClick={() => handleClickEvent(id)}>Publish</button>
   )
@@ -36,7 +36,7 @@ const publishPost = async (id: string): Promise<void> => {
   await Router.push('/')
 }
 
-const Container: React.VFC<ContainerProps> = ({ id }) => {
+const Container: React.FC<ContainerProps> = ({ id }) => {
   return (
     <StyledComponent className="publish_button" handleClickEvent={publishPost} id={id} />
   )

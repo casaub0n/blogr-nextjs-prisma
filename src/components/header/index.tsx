@@ -21,7 +21,7 @@ export type Props = {
   isActive: (pathname: string) => boolean
 } & { user: User }
 
-const Component: React.VFC<Props> = ({ className, user, session, loading, isActive, ...props }) => {
+const Component: React.FC<Props> = ({ className, user, session, loading, isActive, ...props }) => {
 
   if (loading) {
     return (
@@ -102,7 +102,7 @@ export const StyledComponent = styled(Component)`
   align-items: center;
 `
 
-export const Container: React.VFC = () => {
+export const Container: React.FC = () => {
   // https://next-auth.js.org/getting-started/client
   const { data: session, status } = useSession()
   const loading = status === 'loading'

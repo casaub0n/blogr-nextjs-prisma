@@ -10,7 +10,7 @@ type Props = {
   className: string
 } & ContainerProps
 
-const Component: React.VFC<Props> = ({className, children}) => {
+const Component: React.FC<Props> = ({className, children}) => {
   return (
     <div className={clsx(className, 'text-nord3 border-nord3')}>
       {children}
@@ -46,7 +46,7 @@ export const StyledComponent = styled(Component)`
     }
 `
 
-const Container: React.VFC<ContainerProps> = ({children}) => {
+const Container: React.FC<ContainerProps> = ({children}) => {
   return <StyledComponent className="right">{children}</StyledComponent>
 }
 

@@ -21,7 +21,7 @@ export const schema = z.object({
 
 export type FormName = z.infer<typeof schema>
 
-export const Container: React.VFC = () => {
+export const Container: React.FC = () => {
   const { register, formState: { errors }, handleSubmit } = useForm<FormName>({
     mode: 'onChange',
     resolver: zodResolver(schema)

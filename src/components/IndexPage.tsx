@@ -13,7 +13,7 @@ type Props = {
   className: string
 } & ContainerProps
 
-export const Component: React.VFC<Props> = ({className, ...props}) => {
+export const Component: React.FC<Props> = ({className, ...props}) => {
   return (
     <div className={className}>
       <h1>Public Feed</h1>

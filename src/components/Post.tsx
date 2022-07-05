@@ -10,7 +10,7 @@ export type Props = {
   clickEvent: () => void
 } & PostProps
 
-const Component: React.VFC<Props> = ({clickEvent, ...props }) => {
+const Component: React.FC<Props> = ({clickEvent, ...props }) => {
   return (
     <div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" onClick={clickEvent}>
       <div className="font-sans">
@@ -34,7 +34,7 @@ const Component: React.VFC<Props> = ({clickEvent, ...props }) => {
 
 export const StyledComponent = styled(Component)``
 
-const Container: React.VFC<PostProps> = (props) => {
+const Container: React.FC<PostProps> = (props) => {
   const clickEvent = () => Router.push('/p/[id]', `/p/${props.id}`)
 
   return (
