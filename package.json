@@ -145,7 +145,7 @@
     "storybook-addon-next-router": "^4.0.0",
     "stylelint": "14.9.1",
     "textlint": "12.2.1",
-    "ts-jest": "28.0.6",
+    "ts-jest": "28.0.7",
     "typescript": "4.7.4",
     "vercel": "27.1.5"
   },
