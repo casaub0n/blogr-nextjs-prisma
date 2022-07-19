@@ -98,7 +98,7 @@
     "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/preset-typescript": "3.0.0",
     "@storybook/react": "^6.5.9",
-    "@storybook/storybook-deployer": "2.8.11",
+    "@storybook/storybook-deployer": "2.8.12",
     "@tailwindcss/ui": "0.7.2",
     "@tailwindcssinjs/macro": "0.17.0",
     "@testing-library/jest-dom": "^5.16.4",
