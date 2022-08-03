@@ -4017,10 +4017,10 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
 
-"@types/video.js@7.3.42":
-  version "7.3.42"
-  resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.42.tgz#43f0c075e84ac685ce9519ffd371def5ee570bec"
-  integrity sha512-AD6AQNMgLTqrgoayC6SshKh8EDkDd9x5pmEuiY9YsniHlhn5jPXdkVqrzKLwviapaRhQF15TQYxo1JWpqXCUBg==
+"@types/video.js@7.3.43":
+  version "7.3.43"
+  resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.43.tgz#08a71d652627333a1693c7d4e8e8c92a25417fc0"
+  integrity sha512-CEq/I6Np/x8b2Uh4cwt/8eHP8QLOF8pRZsw+GGehjCTP/l0fUqFOiIPhmBeDgnWOaO6zVGKPap0Mroz+W/FSlQ==
 
 "@types/webpack-env@^1.16.0":
   version "1.17.0"
