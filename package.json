@@ -142,7 +142,7 @@
     "prettier": "2.7.1",
     "prisma": "4.1.1",
     "react-docgen-typescript-loader": "3.7.2",
-    "storybook-addon-next-router": "^4.0.0",
+    "storybook-addon-next-router": "4.0.0",
     "stylelint": "14.9.1",
     "textlint": "12.2.1",
     "ts-jest": "28.0.7",
