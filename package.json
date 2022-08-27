@@ -146,7 +146,7 @@
     "stylelint": "14.11.0",
     "textlint": "12.2.1",
     "ts-jest": "28.0.8",
-    "typescript": "4.7.4",
+    "typescript": "4.8.2",
     "vercel": "28.2.0"
   },
   "license": "MIT"
