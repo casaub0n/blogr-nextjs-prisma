@@ -136,7 +136,7 @@
     "lint-staged": "13.0.3",
     "postcss-cli": "10.0.0",
     "postcss-focus": "5.0.1",
-    "postcss-import": "14.1.0",
+    "postcss-import": "15.0.0",
     "postcss-nested": "5.0.6",
     "postcss-preset-env": "7.8.0",
     "prettier": "2.7.1",
