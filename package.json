@@ -108,7 +108,7 @@
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
-    "@types/video.js": "7.3.46",
+    "@types/video.js": "7.3.47",
     "@typescript-eslint/eslint-plugin": "5.36.2",
     "@typescript-eslint/parser": "5.36.2",
     "awesome-typescript-loader": "5.2.1",
