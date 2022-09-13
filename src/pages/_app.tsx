@@ -1,15 +1,20 @@
 import '../../styles/index.css'
 
-import { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import type { Session } from 'next-auth'
 import { SessionProvider } from 'next-auth/react'
 import NextHeadSeo from 'next-head-seo'
 import * as React from 'react'
 
 import * as gtag from '../lib/gtag'
 
-const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
+type Props = {
+  session: Session
+}
+
+const MyApp: React.FC<AppProps<Props>> = ({ Component, pageProps }) => {
   const router = useRouter()
 
   React.useEffect(() => {
