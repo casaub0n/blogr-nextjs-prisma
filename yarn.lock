@@ -1184,7 +1184,7 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@csstools/postcss-cascade-layers@^1.0.6":
+"@csstools/postcss-cascade-layers@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@csstools/postcss-cascade-layers/-/postcss-cascade-layers-1.1.0.tgz#05a820357aac0de097b4acac43f85a55973220e7"
   integrity sha512-XpA7g2KViA2ia23A5kZ/EQw+Sy308kLbvMlDPjFZmojwaJ9DYdJuwujFcDGK9v1QhHRmMEHbV2brVSQSLkN/7A==
@@ -5062,7 +5062,7 @@ atomic-sleep@^1.0.0:
   resolved "https://registry.yarnpkg.com/atomic-sleep/-/atomic-sleep-1.0.0.tgz#eb85b77a601fc932cfe432c5acd364a9e2c9075b"
   integrity sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==
 
-autoprefixer@10.4.11, autoprefixer@^10.4.8:
+autoprefixer@10.4.11, autoprefixer@^10.4.11:
   version "10.4.11"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.11.tgz#835136aff1d9cd43640151e0d2dba00f8eac7c1c"
   integrity sha512-5lHp6DgRodxlBLSkzHOTcufWFflH1ewfy2hvFQyjrblBFlP/0Yh4O/Wrg4ow8WRlN3AAUFFLAQwX8hTptzqVHg==
@@ -13589,7 +13589,7 @@ postcss-custom-media@^8.0.2:
   dependencies:
     postcss-value-parser "^4.2.0"
 
-postcss-custom-properties@^12.1.8:
+postcss-custom-properties@^12.1.9:
   version "12.1.9"
   resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-12.1.9.tgz#0883429a7ef99f1ba239d1fea29ce84906daa8bd"
   integrity sha512-/E7PRvK8DAVljBbeWrcEQJPG72jaImxF3vvCNFwv9cC8CzigVoNIpeyfnJzphnN3Fd8/auBf5wvkw6W9MfmTyg==
@@ -13824,7 +13824,7 @@ postcss-nested@5.0.6:
   dependencies:
     postcss-selector-parser "^6.0.6"
 
-postcss-nesting@^10.1.10:
+postcss-nesting@^10.2.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-10.2.0.tgz#0b12ce0db8edfd2d8ae0aaf86427370b898890be"
   integrity sha512-EwMkYchxiDiKUhlJGzWsD9b2zvq/r2SSubcRrgP+jujMXFzqvANLt16lJANC+5uZ6hjI7lpRmI6O8JIl+8l1KA==
@@ -13856,12 +13856,12 @@ postcss-place@^7.0.5:
   dependencies:
     postcss-value-parser "^4.2.0"
 
-postcss-preset-env@7.8.1:
-  version "7.8.1"
-  resolved "https://registry.yarnpkg.com/postcss-preset-env/-/postcss-preset-env-7.8.1.tgz#2bfe935736727ab601a5c718bf24fc9f858eceb0"
-  integrity sha512-8884CHxQaoN1i4iEK+JvzOe8emODb5R4p/0dw4yEdo7QM4RdUk2sBx0fnzFyJt8BLfZSCGeVkKZ4HC564waBpQ==
+postcss-preset-env@7.8.2:
+  version "7.8.2"
+  resolved "https://registry.yarnpkg.com/postcss-preset-env/-/postcss-preset-env-7.8.2.tgz#4c834d5cbd2e29df2abf59118947c456922b79ba"
+  integrity sha512-rSMUEaOCnovKnwc5LvBDHUDzpGP+nrUeWZGWt9M72fBvckCi45JmnJigUr4QG4zZeOHmOCNCZnd2LKDvP++ZuQ==
   dependencies:
-    "@csstools/postcss-cascade-layers" "^1.0.6"
+    "@csstools/postcss-cascade-layers" "^1.1.0"
     "@csstools/postcss-color-function" "^1.1.1"
     "@csstools/postcss-font-format-keywords" "^1.0.1"
     "@csstools/postcss-hwb-function" "^1.0.2"
@@ -13875,7 +13875,7 @@ postcss-preset-env@7.8.1:
     "@csstools/postcss-text-decoration-shorthand" "^1.0.0"
     "@csstools/postcss-trigonometric-functions" "^1.0.2"
     "@csstools/postcss-unset-value" "^1.0.2"
-    autoprefixer "^10.4.8"
+    autoprefixer "^10.4.11"
     browserslist "^4.21.3"
     css-blank-pseudo "^3.0.3"
     css-has-pseudo "^3.0.4"
@@ -13887,7 +13887,7 @@ postcss-preset-env@7.8.1:
     postcss-color-hex-alpha "^8.0.4"
     postcss-color-rebeccapurple "^7.1.1"
     postcss-custom-media "^8.0.2"
-    postcss-custom-properties "^12.1.8"
+    postcss-custom-properties "^12.1.9"
     postcss-custom-selectors "^6.0.3"
     postcss-dir-pseudo-class "^6.0.5"
     postcss-double-position-gradients "^3.1.2"
@@ -13901,7 +13901,7 @@ postcss-preset-env@7.8.1:
     postcss-lab-function "^4.2.1"
     postcss-logical "^5.0.4"
     postcss-media-minmax "^5.0.0"
-    postcss-nesting "^10.1.10"
+    postcss-nesting "^10.2.0"
     postcss-opacity-percentage "^1.1.2"
     postcss-overflow-shorthand "^3.0.4"
     postcss-page-break "^3.0.4"
