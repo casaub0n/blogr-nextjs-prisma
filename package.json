@@ -105,7 +105,7 @@
     "@testing-library/react": "13.4.0",
     "@types/jest": "29.0.3",
     "@types/node": "16.11.59",
-    "@types/react": "18.0.20",
+    "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "5.1.26",
     "@types/video.js": "7.3.48",
