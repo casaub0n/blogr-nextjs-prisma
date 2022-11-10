@@ -144,7 +144,7 @@
     "react-docgen-typescript-loader": "3.7.2",
     "storybook-addon-next-router": "4.0.1",
     "stylelint": "14.14.1",
-    "textlint": "12.2.2",
+    "textlint": "12.2.3",
     "ts-jest": "29.0.3",
     "typescript": "4.8.4",
     "vercel": "28.4.17"
