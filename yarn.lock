@@ -13824,10 +13824,10 @@ postcss-focus-within@^5.0.4:
   dependencies:
     postcss-selector-parser "^6.0.9"
 
-postcss-focus@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-focus/-/postcss-focus-5.0.1.tgz#dd1a6a126d5dfca458531674a35ff53610e92737"
-  integrity sha512-iVP+4VLenlI0tHHJD+7HyE+7pQ6Hlg3+Zm/xTwNE1LT7OgmYC4r1ale6AnEkABGNKKE3j1LkF/BNcv89lDoICw==
+postcss-focus@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-focus/-/postcss-focus-6.0.0.tgz#b28f703fdc9aaae725f13768ff8ac0976fa4ce26"
+  integrity sha512-Lj8lXButQAYbu2YbRUAjZN7LXcEIn3Neet1DZVdSdR2OppyO6Jl4WSLdEDcBYgLfIH9D4p+zS4RO8i3IbdcMnw==
 
 postcss-font-variant@^5.0.0:
   version "5.0.0"
