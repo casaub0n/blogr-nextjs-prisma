@@ -52,7 +52,7 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@emotion/react": "11.10.5",
+    "@emotion/react": "11.10.6",
     "@hookform/resolvers": "2.9.11",
     "@next-auth/prisma-adapter": "1.0.5",
     "@prisma/client": "4.10.1",
