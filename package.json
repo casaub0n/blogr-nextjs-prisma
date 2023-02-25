@@ -61,7 +61,7 @@
     "axios": "1.2.3",
     "clsx": "1.2.1",
     "isomorphic-unfetch": "4.0.2",
-    "msw": "1.0.1",
+    "msw": "1.1.0",
     "next": "13.2.1",
     "next-auth": "4.19.2",
     "next-head-seo": "0.1.3",
