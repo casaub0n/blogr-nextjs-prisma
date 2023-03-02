@@ -14003,10 +14003,10 @@ next-head-seo@0.1.3:
   resolved "https://registry.yarnpkg.com/next-head-seo/-/next-head-seo-0.1.3.tgz#d1b47711a3c467d25868d88209e08321edfd52a8"
   integrity sha512-81vhTbe5CIi+fF12m2Zd4zCbw5rY65DRJC4y0GDIcvku7AzeQsHsuHWfROBANhWk1Fv7A33IDTJMn31owgoxkQ==
 
-next-i18next@13.2.0:
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/next-i18next/-/next-i18next-13.2.0.tgz#548e06ebe3565498ccd5dc63de23f946d99fabb5"
-  integrity sha512-FOaODpSlaSEPBnBh5GJzm16i7Lyx2YcRMgEVqaa3tEK0rM8u4wCDiTke9wbJmR4oCI1fc+rmTZJew8WiEjj17Q==
+next-i18next@13.2.1:
+  version "13.2.1"
+  resolved "https://registry.yarnpkg.com/next-i18next/-/next-i18next-13.2.1.tgz#6d578bbd7fc39daaaf3a1022a6902a1952ce0f0e"
+  integrity sha512-5JYAWHedbbgIZbGBtxjTMC4M1scvkJq6Wif5kiijXzs4L0CRMpnXtAG9mWOp2N0z2znhr/RtsK3nwVgPt54PNw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@types/hoist-non-react-statics" "^3.3.1"
