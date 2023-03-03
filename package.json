@@ -63,7 +63,7 @@
     "isomorphic-unfetch": "4.0.2",
     "msw": "1.1.0",
     "next": "13.2.3",
-    "next-auth": "4.19.2",
+    "next-auth": "4.20.1",
     "next-head-seo": "0.1.3",
     "next-i18next": "13.2.1",
     "pino": "8.11.0",
