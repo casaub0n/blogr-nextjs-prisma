@@ -79,7 +79,7 @@
     "swr": "2.1.1",
     "tailwindcss": "3.2.7",
     "video.js": "7.21.4",
-    "videojs-youtube": "2.6.1",
+    "videojs-youtube": "3.0.0",
     "zod": "3.21.4"
   },
   "devDependencies": {
