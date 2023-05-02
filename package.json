@@ -143,7 +143,7 @@
     "prisma": "4.13.0",
     "react-docgen-typescript-loader": "3.7.2",
     "storybook-addon-next-router": "4.0.2",
-    "stylelint": "15.6.0",
+    "stylelint": "15.6.1",
     "textlint": "13.1.1",
     "ts-jest": "29.1.0",
     "typescript": "4.9.5",
