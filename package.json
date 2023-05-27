@@ -132,7 +132,7 @@
     "jest-dom": "4.0.0",
     "jest-environment-jsdom": "29.5.0",
     "jest-watch-typeahead": "2.2.2",
-    "jsdom": "21.1.2",
+    "jsdom": "22.1.0",
     "lint-staged": "13.2.2",
     "postcss-cli": "10.1.0",
     "postcss-focus": "6.0.0",
