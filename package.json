@@ -83,7 +83,7 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
-    "@babel/core": "7.21.8",
+    "@babel/core": "7.23.3",
     "@fullhuman/postcss-purgecss": "5.0.0",
     "@storybook/addon-actions": "6.5.16",
     "@storybook/addon-essentials": "6.5.16",
