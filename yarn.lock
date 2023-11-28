@@ -9526,10 +9526,10 @@ eslint-module-utils@^2.8.0:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-import-access@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-access/-/eslint-plugin-import-access-1.0.2.tgz#ba7be2bfec5730dff514f2647c87ab5fc580cb21"
-  integrity sha512-+t2YqTdmvbAa4AqOWZ4zJRg2aMSEv0xPJFBIk06hWIwTzw4H1LhvlYWJ3zJ1qTgrOKlxPzEViznIou+giwSseQ==
+eslint-plugin-import-access@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import-access/-/eslint-plugin-import-access-1.1.2.tgz#02140cbf28c6952d8505993e4c1c5b46dbb76fe6"
+  integrity sha512-9c4DZzYlKS8SgV0RmgFeVSEksbbyuEX/FxNw05gFa+rbscSGMHiFOiO2ledYnfbrUJPsrO3alb0oEVNtXj0oIw==
   dependencies:
     "@typescript-eslint/experimental-utils" "^5.9.1"
     "@typescript-eslint/typescript-estree" "^5.9.1"
