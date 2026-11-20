@@ -107,7 +107,7 @@
     "@types/node": "18.19.33",
     "@types/react": "18.2.2",
     "@types/react-dom": "18.2.3",
-    "@types/styled-components": "5.1.34",
+    "@types/styled-components": "5.1.36",
     "@types/video.js": "7.3.58",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
